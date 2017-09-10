@@ -60,8 +60,9 @@ rofi.display-combi: myprompt
 URxvt.transparent: true
 URxvt.shading:     30
 URxvt.fading:      40
-URxvt.font:        xft:Inconsolata for Powerline:pixelsize=12
+!URxvt.font:        xft:Inconsolata for Powerline:pixelsize=12
 URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+
 
 URxvt.scrollBar:         false
 URxvt.scrollTtyOutput:   false

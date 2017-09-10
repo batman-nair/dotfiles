@@ -30,7 +30,8 @@ font pango:System San Fransisco Display 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec termite -d $(xcwd)
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -98,15 +99,16 @@ set $WS1   "1:   ZSH "
 set $WS2   "2:   Code "
 set $WS3   "3:   Chromium "
 set $WS4   "4:   Files "
+set $WS5   "5:   Docs "
 
-set $WS10   "10:   Media "
+set $WS10   "10:   Music "
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
 bindsym $mod+2 workspace $WS2
 bindsym $mod+3 workspace $WS3
 bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace 5
+bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
@@ -118,7 +120,7 @@ bindsym $mod+Shift+1 move container to workspace $WS1
 bindsym $mod+Shift+2 move container to workspace $WS2
 bindsym $mod+Shift+3 move container to workspace $WS3
 bindsym $mod+Shift+4 move container to workspace $WS4
-bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+5 move container to workspace $WS5
 bindsym $mod+Shift+6 move container to workspace 6
 bindsym $mod+Shift+7 move container to workspace 7
 bindsym $mod+Shift+8 move container to workspace 8
@@ -138,6 +140,11 @@ hide_edge_borders both
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5% #decrease sound volume
 
+#Screenshot
+# scrot & gimp - root
+bindsym Print exec scrot -e 'mv $f ~/Pictures/'
+# scrot & gimp - select window or rectangle
+bindsym $mod+Print exec scrot -s -e 'mv $f ~/Pictures/'
 
 set $Locker i3lock-fancy -pt "" -- scrot -z 
 
@@ -188,6 +195,8 @@ bindsym $mod+Shift+m mode "media_player"
 mode "media_player" {
 	bindsym plus exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 	bindsym minus exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+	bindsym Up exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+	bindsym Down exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 
 	bindsym Left exec --no-startup-id cmus-remote -r #Prev	
 	bindsym Right exec --no-startup-id cmus-remote -n #Next	
@@ -254,14 +263,14 @@ bar {
             inactive_workspace  #212121 #212121 #86888C
             urgent_workspace    #2F343A #D64E4E #FFFFFF
     }
-
+    
     strip_workspace_numbers yes
     separator_symbol        "·"
     workspace_buttons       yes
 
     font pango:Inconsolata for Powerline 10 
     
-    status_command ~/.i3/bumblebee-status/bumblebee-status -m pasink cpu todo battery datetime -p traffic.showname="False" datetime.format="%a, %b %d %Y %H:%M" traffic.states="^down" -t gruvbox-powerline
+    status_command ~/.i3/bumblebee-status/bumblebee-status -m traffic pasink cpu battery datetime -p traffic.showname="False" datetime.format="%a, %b %d %Y %H:%M" traffic.states="^down" -t gruvbox-powerline
 
 }
 
@@ -269,8 +278,17 @@ exec_always --no-startup-id compton -f
 
 #exec --no-startup-id redshift-gtk 
 
-exec feh --bg-scale /home/arjun/Pictures/Wallpapers/wallhaven-313288.jpg
+exec --no-startup-id feh --bg-scale /home/arjun/Pictures/Wallpapers/wallhaven-313288.jpg
 
 exec --no-startup-id dunst
 
+exec urxvt -e cmus
+
+assign [class="(?i)urxvt" title="(?i)cmus"]	$WS10
+
+assign [class="(?i)thunar"]			$WS4
+
+assign [class="(?i)evince"]			$WS5
+
+assign [class="(?i)chromium"]			$WS3
 
