@@ -1,0 +1,108 @@
+#if __has_include(".extend.Xresources")
+#include ".extend.Xresources"
+#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+XTerm*background: #2b2b2b
+XTerm*foreground: #e7e7e7
+XTerm*pointerColor: #16A085
+XTerm*faceName: Fixed
+XTerm*faceSize: 11
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+! first two color-window were a013191c
+! a6 = 65% amount of black needed over white for white to be a 7 contrast score
+! b3 = 70%
+! 80 = 50%
+rofi.color-window: argb:a6000000, argb:a6000000, argb:0000000 
+rofi.color-normal: argb:0fdf6e3, #ffffff, argb:0eee8d5, #009688, #ffffff 
+rofi.color-active: #fdf6e3, #268bd2, #eee8d5, #268bd2, #fdf6e3 
+rofi.color-urgent: #fdf6e3, #dc322f, #eee8d5, #dc322f, #fdf6e3
+rofi.line-margin: 31
+rofi.font: Roboto Light 36
+rofi.padding: 168
+rofi.fullscreen: true
+rofi.display-drun: 
+rofi.display-window: win
+rofi.display-combi: myprompt
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! User: leofa
+! Copyright: 2017 leofa
+! ------------------------------------------------------------------------------
+! "Color scheme for normal row" Set from: File
+!rofi.color-normal:                   argb:0383c4a, #c4cbd4, argb:96404552, #4084d6, #f9f9f9
+! "Color scheme for urgent row" Set from: File
+!rofi.color-urgent:                   argb:02d303b, #cc6666, argb:e52d303b, #a54242, #f9f9f9
+! "Color scheme for active row" Set from: File
+!rofi.color-active:                   argb:02d303b, #b5bd68, argb:e42d303b, #8c9440, #f9f9f9
+! "Color scheme window" Set from: File
+!rofi.color-window:                   argb:f22d303b, #7c8389, #1d1f21
+! "Separator style (none, dash, solid)" Set from: XResources
+!rofi.separator-style:                solid
+
+URxvt.transparent: true
+URxvt.shading:     30
+URxvt.fading:      40
+URxvt.font:        xft:Inconsolata for Powerline:pixelsize=12
+URxvt.font: xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true,xft:Source\ Code\ Pro\ Medium:pixelsize=13:antialias=true:hinting=true
+
+URxvt.scrollBar:         false
+URxvt.scrollTtyOutput:   false
+URxvt.scrollWithBuffer:  true
+URxvt.scrollTtyKeypress: true
+
+! special
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+! black
+*.color0:       #1d1f21
+*.color8:       #969896
+
+! red
+*.color1:       #cc6666
+*.color9:       #cc6666
+
+! green
+*.color2:       #b5bd68
+*.color10:      #b5bd68
+
+! yellow
+*.color3:       #f0c674
+*.color11:      #f0c674
+
+! blue
+*.color4:       #81a2be
+*.color12:      #81a2be
+
+! magenta
+*.color5:       #b294bb
+*.color13:      #b294bb
+
+! cyan
+*.color6:       #8abeb7
+*.color14:      #8abeb7
+
+! white
+*.color7:       #c5c8c6
+*.color15:      #ffffff
+
+
