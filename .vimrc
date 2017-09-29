@@ -81,6 +81,7 @@ Plug 'klen/python-mode'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'terryma/vim-multiple-cursors'
 " Initialize plugin system
 call plug#end()
 
