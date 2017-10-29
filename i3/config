@@ -213,8 +213,8 @@ mode "media_player" {
 }
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 2 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 2 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2 # decrease screen brightness
 
 
 bindsym $mod+Shift+b mode "brightness_control +|-"
@@ -285,7 +285,7 @@ exec_always --no-startup-id compton -f
 
 #exec --no-startup-id redshift-gtk 
 
-exec --no-startup-id feh --bg-scale /home/arjun/Pictures/Wallpapers/wallhaven-313288.jpg
+exec --no-startup-id feh --bg-scale /home/arjun/Pictures/Wallpapers/wallpaper-picture-18.jpg
 
 #exec --no-startup-id steam
 
