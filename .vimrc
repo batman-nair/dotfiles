@@ -61,12 +61,22 @@ endif
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
 
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 
+Plug 'dylanaraps/wal.vim'
+
 " Start interactive EasyAlign in visual mode (e.g. vipga)
+
 xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
@@ -78,6 +88,10 @@ Plug 'junegunn/seoul256.vim'
 
 Plug 'klen/python-mode'
 
+Plug 'airblade/vim-gitgutter'
+
+Plug 'easymotion/vim-easymotion'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -85,8 +99,28 @@ Plug 'terryma/vim-multiple-cursors'
 " Initialize plugin system
 call plug#end()
 
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-overwin-f)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>w <Plug>(easymotion-w)
+
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
 let g:seoul256_background = 233
-colo seoul256
+"colo seoul256
+
+colorscheme wal
