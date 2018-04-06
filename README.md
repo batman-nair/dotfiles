@@ -2,8 +2,8 @@
 
 ## Screenshots
 
-[[screenshots/clean.png|alt=clean]]
+![clean](screenshots/clean.png)
 
-[[screenshots/dirty.png|alt=dirty]]
+![dirty](screenshots/dirty.png)
 
-[[screenshots/music.png|alt=music]]
+![music](screenshots/music.png)
