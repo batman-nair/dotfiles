@@ -11,3 +11,6 @@ cp -rf ~/.config/rofi ./config/
 cp -rf ~/.config/termite ./config/
 cp -rf ~/.config/polybar ./config/
 cp -rf ~/.config/i3 ./config/
+
+# Other config
+cp /etc/mpd.conf .
