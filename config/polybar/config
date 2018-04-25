@@ -69,7 +69,7 @@ card = intel_backlight
 enable-scroll = true
 
 format = <label>
-label =  %percentage%%
+label =  %percentage%%
 
 ramp-0 = 🌕
 ramp-1 = 🌔
