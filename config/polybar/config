@@ -68,14 +68,15 @@ type = internal/xbacklight
 card = intel_backlight
 enable-scroll = true
 
-format = <ramp> <label>
-label = %percentage%
+format = <label>
+label =  %percentage%%
 
 ramp-0 = 🌕
 ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
+ramp-font = 4
 
 [module/battery]
 type = internal/battery
