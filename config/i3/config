@@ -367,4 +367,3 @@ assign [class="(?i)steam"]			$WS6
 
 assign [class="(?i)ncmpcpp"]			$WS10
 
-assign [class="(?i)cava"]			$WS10
