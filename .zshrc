@@ -107,3 +107,7 @@ mp3search () { firefox -search "?index of? mp3 $*"; }
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+# Config shortcuts
+alias cfi="vim ~/.config/i3/config"
+
