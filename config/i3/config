@@ -255,7 +255,7 @@ mode "Game Mode" {
 }
 
 # Cycle wallpapers and apply new colorscheme.
-bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Wallpapers
+bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Wallpapers -t
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase screen brightness
@@ -342,7 +342,7 @@ exec termite -e ncmpcpp --class ncmpcpp
 
 #exec --no-startup-id feh --bg-scale /home/arjun/Pictures/DGj3ijm.jpg
 # random wallpaper with color scheme change
-exec --no-startup-id wal -i ~/Pictures/Wallpapers/
+exec --no-startup-id wal -i ~/Pictures/Wallpapers/ -t
 
 #exec --no-startup-id steam
 
