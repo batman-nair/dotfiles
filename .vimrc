@@ -1,15 +1,4 @@
 
-" An example for a vimrc file.
-"
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2016 Jul 28
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
-
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -103,11 +92,11 @@ let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{label}`
-nmap s <Plug>(easymotion-overwin-f)
+" nmap s <Plug>(easymotion-overwin-f)
 " or
 " `s{char}{char}{label}`
 " Need one more keystroke, but on average, it may be more comfortable.
-nmap s <Plug>(easymotion-overwin-f2)
+nmap gs <Plug>(easymotion-overwin-f2)
 
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
@@ -124,3 +113,20 @@ let g:seoul256_background = 233
 "colo seoul256
 
 colorscheme wal
+
+set tabstop=4
+set softtabstop=4 expandtab smarttab
+set shiftwidth=4
+
+" MAPPINGS
+
+"" Navigating with guides
+	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+	map <Space><Tab> <Esc>/<++><Enter>"_c4l
+
+"" C++ Mappings
+	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>kf>i
+	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3kf;i 
+	autocmd Filetype cpp inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3kf)i
+	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>kf>i

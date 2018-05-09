@@ -319,6 +319,8 @@ bindsym $mod+r mode "resize"
 #
 #}
 
+# Quick view vim help
+bindsym $mod+Shift+v exec feh ~/Pictures/vim_cheat_sheet.png --scale-down
 
 #focus on launch
 for_window [class=Nitrogen|Font-manager|Evince] focus
