@@ -112,6 +112,11 @@ map <Leader>w <Plug>(easymotion-w)
 let g:seoul256_background = 233
 "colo seoul256
 
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+
 colorscheme wal
 
 set tabstop=4
@@ -120,6 +125,31 @@ set shiftwidth=4
 
 " MAPPINGS
 
+"" Move lines up or down
+    nnoremap <C-j> :m .+1<CR>==
+    nnoremap <C-k> :m .-2<CR>==
+    inoremap <C-j> <Esc>:m .+1<CR>==gi
+    inoremap <C-k> <Esc>:m .-2<CR>==gi
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+
+"" Better indentation
+    vnoremap > >gv
+    vnoremap < <gv
+
+"" Press Space to turn off highlighting and clear any message already displayed.
+    nnoremap <silent><Space> :set hlsearch! hlsearch?<CR>
+
+"" Spell-check with F6
+    map <F6> :setlocal spell! spelllang=en_us<CR>
+
+"" Goyo
+    map <F10> :Goyo<CR>
+    inoremap <F10> <Esc>:Goyo<CR>a
+
+"" Copy with Ctrl C
+    map <C-c> "+y
+
 "" Navigating with guides
 	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
@@ -127,6 +157,9 @@ set shiftwidth=4
 
 "" C++ Mappings
 	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>kf>i
-	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3kf;i 
+	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3kf;i
 	autocmd Filetype cpp inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3kf)i
 	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>kf>i
+
+    """ Compile and run c++ file
+    autocmd Filetype cpp nnoremap <F5> :!g++<Space><C-r>%<Space>-o<Space><C-r>%<BS><BS><BS>o<Space>&&<Space>./<C-r>%<BS><BS><BS>.o<CR>
