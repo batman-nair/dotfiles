@@ -330,8 +330,11 @@ for_window [class=vlc] focus
 ## image viewer need floating
 for_window [class=Gpicview|Viewnior|feh] floating enable
 
-## start a web browser
+## start firefox
 bindsym $mod+Shift+f exec firefox;workspace $WS3;focus
+
+# Start thunar
+bindsym $mod+Shift+t exec thunar;workspace $WS4;focus
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
