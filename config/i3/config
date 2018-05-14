@@ -322,6 +322,9 @@ bindsym $mod+r mode "resize"
 # Quick view vim help
 bindsym $mod+Shift+v exec feh ~/Pictures/vim_cheat_sheet.png --scale-down
 
+# Hide polybar
+bindsym $mod+Shift+p exec ~/.config/i3/hide_polybar.sh 
+
 #focus on launch
 for_window [class=Nitrogen|Font-manager|Evince] focus
 
@@ -361,7 +364,7 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,s
 assign [class=Thunar|File-roller] 		$WS4
 
 ## workspace 5 (Documents)
-assign [class=Evince]				$WS5
+assign [class=Evince|llpp]				$WS5
 
 ## workspace 7 (multimedia)
 assign [class=vlc|mpv]			 	$WS7

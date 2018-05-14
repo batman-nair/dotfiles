@@ -61,6 +61,7 @@ call plug#begin()
 
 Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
+Plug 'zhou13/vim-easyescape'
 
 Plug 'dylanaraps/wal.vim'
 
@@ -123,6 +124,9 @@ set tabstop=4
 set softtabstop=4 expandtab smarttab
 set shiftwidth=4
 
+set number
+set relativenumber
+
 " MAPPINGS
 
 "" Move lines up or down
@@ -155,11 +159,15 @@ set shiftwidth=4
 	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 	map <Space><Tab> <Esc>/<++><Enter>"_c4l
 
-"" C++ Mappings
-	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>kf>i
-	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3kf;i
-	autocmd Filetype cpp inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3kf)i
-	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>kf>i
+"" cpp Mappings
+	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
+	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
+	autocmd Filetype cpp inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
+	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>=kf>i
+    autocmd Filetype cpp inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
 
-    """ Compile and run c++ file
+    """ Compile and run cpp file
     autocmd Filetype cpp nnoremap <F5> :!g++<Space><C-r>%<Space>-o<Space><C-r>%<BS><BS><BS>o<Space>&&<Space>./<C-r>%<BS><BS><BS>.o<CR>
+
+    """ Templates
+    autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
