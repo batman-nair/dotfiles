@@ -161,10 +161,18 @@ set relativenumber
 
 "" cpp Mappings
 	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
+	autocmd Filetype cpp inoremap ;wh <Esc>Iwhile()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
+	autocmd Filetype cpp inoremap ;fv <Esc>Ifor(:<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf:i
 	autocmd Filetype cpp inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>=kf>i
+	autocmd Filetype cpp inoremap ;se <Esc>Iset<><Space><++>;<Enter><++><Esc>=kf>i
     autocmd Filetype cpp inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
+    autocmd Filetype cpp inoremap ;be .begin(),<Space><++>.end()<Esc>Fbhi
+    autocmd Filetype cpp inoremap ;co <Esc>Icout<<""<<endl;<Enter><++><Esc>=kf"li
+    autocmd Filetype cpp nnoremap ;co Icout<<""<<endl;<Enter><++><Esc>=kf"li
+    autocmd Filetype cpp inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
+    autocmd Filetype cpp nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
 
     """ Compile and run cpp file
     autocmd Filetype cpp nnoremap <F5> :!g++<Space><C-r>%<Space>-o<Space><C-r>%<BS><BS><BS>o<Space>&&<Space>./<C-r>%<BS><BS><BS>.o<CR>
