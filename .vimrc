@@ -59,18 +59,10 @@ endif
 
 call plug#begin()
 
-Plug 'junegunn/vim-easy-align'
 Plug 'tpope/vim-sensible'
 Plug 'zhou13/vim-easyescape'
 
 Plug 'dylanaraps/wal.vim'
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
 
 Plug 'junegunn/goyo.vim'
 
@@ -81,13 +73,19 @@ Plug 'klen/python-mode'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'easymotion/vim-easymotion'
+Plug 'vim-syntastic/syntastic'
 
+Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'terryma/vim-multiple-cursors'
+Plug 'scrooloose/nerdtree'
+
 " Initialize plugin system
 call plug#end()
+
+" Python Mode making default python3
+let g:pymode_python = 'python3'
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -102,10 +100,27 @@ nmap gs <Plug>(easymotion-overwin-f2)
 " Turn on case insensitive feature
 let g:EasyMotion_smartcase = 1
 
-" JK motions: Line motions
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
-map <Leader>w <Plug>(easymotion-w)
+" Awesome quick word motion with easymotion
+nmap gw <Plug>(easymotion-bd-w)
+
+" enable/disable syntastic integration
+let g:airline#extensions#syntastic#enabled = 1
+
+" syntastic error_symbol
+let airline#extensions#syntastic#error_symbol = 'E:'
+
+" syntastic statusline error format (see |syntastic_stl_format|)
+let airline#extensions#syntastic#stl_format_err = '%E{[%e(#%fe)]}'
+
+" syntastic warning
+let airline#extensions#syntastic#warning_symbol = 'W:'
+
+" syntastic statusline warning format (see |syntastic_stl_format|)
+let airline#extensions#syntastic#stl_format_err = '%W{[%w(#%fw)]}'
+
+
+" base16 colorscheme fix
+" set termguicolors
 
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
@@ -127,7 +142,23 @@ set shiftwidth=4
 set number
 set relativenumber
 
+" Syntastic recommended settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " MAPPINGS
+
+"" Change to solid colorscheme
+    map <F2> :set termguicolors!<CR>:colo base16-monokai<CR>
+
+"" NERDTree shortcut
+    map <C-n> :NERDTreeToggle<CR>
 
 "" Move lines up or down
     nnoremap <C-j> :m .+1<CR>==

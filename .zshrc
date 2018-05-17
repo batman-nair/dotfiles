@@ -110,4 +110,5 @@ export EDITOR="$VISUAL"
 
 # Config shortcuts
 alias cfi="vim ~/.config/i3/config"
+alias cfv="vim ~/.vimrc"
 
