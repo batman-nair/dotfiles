@@ -135,6 +135,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 
 colorscheme wal
 
+set backupdir=~/.vim/tmp//,.
+set directory=~/.vim/tmp//,.
+
 set tabstop=4
 set softtabstop=4 expandtab smarttab
 set shiftwidth=4

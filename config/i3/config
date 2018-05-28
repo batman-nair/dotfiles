@@ -10,7 +10,7 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 #
 # Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# Change 'color7' and 'color2' to whatever colors you want i3 to use
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
@@ -90,7 +90,7 @@ bindsym $mod+semicolon workspace next
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+Shift+semicolon workspace back_and_forth
 bindsym $mod+Ctrl+Down workspace back_and_forth
-bindsym $mod+p workspace prev 
+bindsym $mod+p workspace prev
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -167,7 +167,7 @@ bindsym Print exec scrot -e 'mv $f ~/Pictures/'
 # scrot & gimp - select window or rectangle
 bindsym $mod+Print exec scrot -s -e 'mv $f ~/Pictures/'
 
-set $Locker i3lock-fancy -p -- scrot -z 
+set $Locker i3lock-fancy -p -- scrot -z
 
 #lock command
 bindsym $mod+x exec $Locker
@@ -192,8 +192,8 @@ bindsym $mod+z mode "$mode_system"
 #Remove borders
 for_window [class="^.*"] border pixel 0
 #gaps
-gaps inner 5 
-gaps outer 2 
+gaps inner 5
+gaps outer 2
 smart_gaps on
 
 bindsym $mod+Shift+g mode "$mode_gaps_inner"
@@ -219,21 +219,21 @@ mode "Music control" {
 	bindsym Up exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 	bindsym Down exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 
-	bindsym j exec --no-startup-id mpc prev	
-	bindsym l exec --no-startup-id mpc next	
- 
+	bindsym j exec --no-startup-id mpc prev
+	bindsym l exec --no-startup-id mpc next
+
 	bindsym i exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 	bindsym k exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 
-	bindsym Left exec --no-startup-id mpc prev	
-	bindsym Right exec --no-startup-id mpc next	
+	bindsym Left exec --no-startup-id mpc prev
+	bindsym Right exec --no-startup-id mpc next
 	bindsym space exec --no-startup-id mpc toggle
-	 
-	# bindsym Left exec --no-startup-id cmus-remote -r #Prev	
-	# bindsym Right exec --no-startup-id cmus-remote -n #Next	
- 	 
+
+	# bindsym Left exec --no-startup-id cmus-remote -r #Prev
+	# bindsym Right exec --no-startup-id cmus-remote -n #Next
+
 	# bindsym space exec --no-startup-id cmus-remote -u #Toggle pause
- 	
+
 	bindsym Return mode "default"
         bindsym Escape mode "default"
 }
@@ -245,7 +245,7 @@ mode "Game Mode" {
 	# Sreen brightness controls
 	bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2 # increase screen brightness
 	bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2 # decrease screen brightness
-	
+
 	# Pulse Audio controls
 	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
@@ -295,7 +295,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#    
+#
 #    colors {
 #            background  #212121b0
 #            statusline  #DDDDDD
@@ -306,15 +306,15 @@ bindsym $mod+r mode "resize"
 #            inactive_workspace  #212121b0 #212121b0 #a6a8ad
 #            urgent_workspace    #2F343A #D64E4E #FFFFFF
 #    }
-#    
+#
 #    strip_workspace_numbers yes
 #    separator_symbol        "·"
 #    workspace_buttons       yes
 #
-#    font pango:Inconsolata for Powerline 10 
-#    
+#    font pango:Inconsolata for Powerline 10
+#
 #    i3bar_command i3bar -t
-#    
+#
 #    status_command ~/bumblebee-status/bumblebee-status -m traffic pasink cpu battery datetime -p traffic.showname="False" datetime.format="%a, %b %d %Y %H:%M" datetime.locale="en_IN.UTF-8" traffic.states="^down" -t gruvbox-powerline-edit
 #
 #}
@@ -323,12 +323,14 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+v exec feh ~/Pictures/vim_cheat_sheet.png --scale-down
 
 # Hide polybar
-bindsym $mod+Shift+p exec ~/.config/i3/hide_polybar.sh 
+bindsym $mod+Shift+p exec ~/.config/i3/hide_polybar.sh
 
 #focus on launch
 for_window [class=Nitrogen|Font-manager|Evince] focus
 
 for_window [class=vlc] focus
+
+for_window [class=llpp] focus
 
 ## image viewer need floating
 for_window [class=Gpicview|Viewnior|feh] floating enable
