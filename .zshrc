@@ -103,7 +103,7 @@ mp3search () { firefox -search "?index of? mp3 $*"; }
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(wal -tr &)
+#(wal -tr &)
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
@@ -111,4 +111,6 @@ export EDITOR="$VISUAL"
 # Config shortcuts
 alias cfi="vim ~/.config/i3/config"
 alias cfv="vim ~/.vimrc"
-
+alias cfz="vim ~/.zshrc"
+alias mult="/mnt/AA9CE4319CE3F5AB/"
+alias colorpick="colorpicker --short --one-shot --preview | xsel -b"

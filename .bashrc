@@ -44,7 +44,7 @@ mp3search () { firefox -search "?index of? mp3 $*"; }
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
-(wal -tr &)
+#(wal -tr &)
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
