@@ -98,7 +98,7 @@ export LANG=en_IN.UTF-8
 
 xset -b
 
-mp3search () { firefox -search "?index of? mp3 $*"; }
+mp3search () { xdg-open "https://www.google.com/search?q=?index of? mp3 $*"; }
 
 # Import colorscheme from 'wal'
 # &   # Run the process in the background.
