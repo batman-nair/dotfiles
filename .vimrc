@@ -128,15 +128,13 @@ let airline#extensions#syntastic#stl_format_err = '%W{[%w(#%fw)]}'
 let g:seoul256_background = 233
 "colo seoul256
 
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
-:autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd BufWritePre * %s/\s\+$//e
 
 colorscheme wal
 
 set backupdir=~/.vim/tmp//,.
 set directory=~/.vim/tmp//,.
+set undodir=~/.vim/tmp//,.
 
 set tabstop=4
 set softtabstop=4 expandtab smarttab
@@ -189,9 +187,10 @@ let g:syntastic_check_on_wq = 0
     map <C-c> "+y
 
 "" Navigating with guides
-	inoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-	vnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
-	map <Space><Tab> <Esc>/<++><Enter>"_c4l
+    inoremap ;im <++>
+	inoremap ;<Tab> <Esc>/<++><Enter>"_c4l
+	vnoremap ;<Tab> <Esc>/<++><Enter>"_c4l
+	map ;<Tab> <Esc>/<++><Enter>"_c4l
 
 "" cpp Mappings
 	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
@@ -213,3 +212,7 @@ let g:syntastic_check_on_wq = 0
 
     """ Templates
     autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
+
+    """ javascript snippets
+	autocmd Filetype javascript inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
+	autocmd Filetype javascript inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
