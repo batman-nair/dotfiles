@@ -163,8 +163,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 # Screenshot
 # scrot & gimp - root
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
-# 
-bindsym $mod+Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/temp.png'
+# This can be viewed using $mod+n
+bindsym --release Shift+Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/temp1.png'
 
 # Lock Command
 # set $Locker i3lock-fancy -p -- scrot -z
@@ -247,7 +247,9 @@ mode "Game Mode" {
 bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Wallpapers -t
 # Quick view vim help
 bindsym $mod+Shift+v exec feh ~/Pictures/vim_cheat_sheet.png --scale-down
-# A temp pic which can be ued for reference
+# A temp pic which can be used for reference
+# Shift+Print can be used to create temp1
+bindsym $mod+n exec feh ~/Pictures/temp1.png --scale-down
 bindsym $mod+Shift+n exec feh ~/Pictures/temp.png --scale-down
 # Hide polybar
 bindsym $mod+Shift+p exec ~/.config/i3/hide_polybar.sh
