@@ -216,3 +216,4 @@ let g:syntastic_check_on_wq = 0
     """ javascript snippets
 	autocmd Filetype javascript inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype javascript inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
+    autocmd Filetype javascript inoremap ;fu function()<Space>{<Enter><++><Enter>}<++><Esc>2=kf)

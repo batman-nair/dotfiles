@@ -75,7 +75,7 @@ bindsym $mod+Shift+Return exec termite -d $(xcwd)
 bindsym $mod+Shift+q kill
 
 # Start rofi (program launcher)
-bindsym $mod+d exec "rofi -modi window,run,drun -show drun -hide-scrollbar"
+bindsym $mod+d exec "rofi -modi drun -show drun -hide-scrollbar"
 
 
 ## Window controls
@@ -165,6 +165,16 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/'
 # This can be viewed using $mod+n
 bindsym --release Shift+Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/temp1.png'
+# To make gifs, screencasts :)
+bindsym Ctrl+Shift+Print mode "screencast"
+mode "screencast" {
+    # Print to start recording and hit Shift+Print to stop it
+    bindsym Print exec ~/.config/i3/screencast.sh
+    bindsym Shift+Print exec killall ffmpeg
+    # back to normal: Enter or Escape. Can also be stopped this way
+    bindsym Return exec killall ffmpeg; mode "default"
+    bindsym Escape exec killall ffmpeg; mode "default"
+}
 
 # Lock Command
 # set $Locker i3lock-fancy -p -- scrot -z
@@ -288,6 +298,8 @@ for_window [class=vlc] focus
 for_window [class=Evince|llpp] focus
 # Image view floating by default
 for_window [class=Gpicview|Viewnior|feh] floating enable
+# This is a personal project specific rule
+for_window [title="Lane*"] floating enable
 
 
 ## Application Organisation
