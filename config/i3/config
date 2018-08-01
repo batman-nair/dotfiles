@@ -338,7 +338,7 @@ for_window [title="Lane*"] floating enable, sticky enable
 
 ## Application Organisation
 # 3: Browsers
-assign [class="(?i)Firefox"]			$WS3
+assign [class=Firefox|qutebrowser]		$WS3
 # 4: File-managers
 assign [class=Thunar|File-roller] 		$WS4
 # 5: Document Viewers
