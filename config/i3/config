@@ -5,6 +5,8 @@
 
 # Alt key set as mod
 set $mod mod1
+# Terminal set as termite
+set $terminal termite
 
 # Font for window titles. will also be used by the bar unless a different font
 font pango:system san fransisco display 8
@@ -68,8 +70,8 @@ smart_gaps on
 
 ## Basic Mappings
 # Start a terminal
-bindsym $mod+Return exec termite
-bindsym $mod+Shift+Return exec termite -d $(xcwd)
+bindsym $mod+Return exec $terminal
+bindsym $mod+Shift+Return exec $terminal -d $(xcwd)
 
 # Kill focused window
 bindsym $mod+Shift+q kill
@@ -252,6 +254,33 @@ mode "Game Mode" {
     bindsym $mod+Shift+o mode "default"
 }
 
+# Android Mode - no Alt-Enter shortcut, has basic stuff like workspace motion
+bindsym $mod+Shift+a mode "Android Mode"
+mode "Android Mode" {
+    # switch to workspace
+    bindsym $mod+1 workspace $WS1
+    bindsym $mod+2 workspace $WS2
+    bindsym $mod+3 workspace $WS3
+    bindsym $mod+4 workspace $WS4
+    bindsym $mod+5 workspace $WS5
+    bindsym $mod+6 workspace $WS6
+    bindsym $mod+7 workspace $WS7
+    bindsym $mod+8 workspace 8
+    bindsym $mod+9 workspace 9
+    bindsym $mod+0 workspace $WS10
+    # Terminal opened with mod+Shift+Enter
+    bindsym $mod+Shift+Return exec $terminal
+	# Sreen brightness controls
+	bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
+	bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
+	# Pulse Audio controls
+	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+    # Press the same combination to exit
+    bindsym $mod+Shift+a mode "default"
+}
+
 # Few QOL shortcuts
 # Cycle wallpapers and apply new colorscheme.
 bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Wallpapers -t
@@ -263,6 +292,10 @@ bindsym $mod+n exec feh ~/Pictures/temp1.png --scale-down
 bindsym $mod+Shift+n exec feh ~/Pictures/temp.png --scale-down
 # Hide polybar
 bindsym $mod+Shift+p exec ~/.config/i3/hide_polybar.sh
+# Floating youtube vids
+bindsym $mod+y exec youtube-dl -q -o- $(xsel -o) | mplayer -cache 1024 -
+# Make the window go top right corner, sticky
+bindsym $mod+Shift+y floating enable; resize set 400 300; sticky enable; move window to position 966 20
 
 # Application Shortcuts
 # Firefox
@@ -277,7 +310,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Compton
 exec_always --no-startup-id compton --config ~/.config/compton.conf -f -b
 # Open ncmcpp on start
-exec termite -e ncmpcpp --class ncmpcpp
+exec $terminal -e ncmpcpp --class ncmpcpp
 
 
 ## Startup Options
@@ -298,8 +331,9 @@ for_window [class=vlc] focus
 for_window [class=Evince|llpp] focus
 # Image view floating by default
 for_window [class=Gpicview|Viewnior|feh] floating enable
+for_window [class=MPlayer] floating enable
 # This is a personal project specific rule
-for_window [title="Lane*"] floating enable
+for_window [title="Lane*"] floating enable, sticky enable
 
 
 ## Application Organisation

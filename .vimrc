@@ -128,6 +128,7 @@ let airline#extensions#syntastic#stl_format_err = '%W{[%w(#%fw)]}'
 let g:seoul256_background = 233
 "colo seoul256
 
+" Remove trailing whitespaces when saving
 autocmd BufWritePre * %s/\s\+$//e
 
 colorscheme wal
@@ -160,6 +161,10 @@ let g:syntastic_check_on_wq = 0
 
 "" NERDTree shortcut
     map <C-n> :NERDTreeToggle<CR>
+
+"" Move through wrapped line with fix for numbered line jumps
+    nnoremap <expr> j v:count ? 'j' : 'gj'
+    nnoremap <expr> k v:count ? 'k' : 'gk'
 
 "" Move lines up or down
     nnoremap <C-j> :m .+1<CR>==
