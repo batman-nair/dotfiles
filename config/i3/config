@@ -333,7 +333,7 @@ for_window [class=Evince|llpp] focus
 for_window [class=Gpicview|Viewnior|feh] floating enable
 for_window [class=MPlayer] floating enable
 # This is a personal project specific rule
-for_window [title="Lane*"] floating enable, sticky enable
+# for_window [title="Lane*"] floating enable, sticky enable
 
 
 ## Application Organisation
