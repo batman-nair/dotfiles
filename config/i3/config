@@ -7,6 +7,7 @@
 set $mod mod1
 # Terminal set as termite
 set $terminal termite
+set $browser qutebrowser
 
 # Font for window titles. will also be used by the bar unless a different font
 font pango:system san fransisco display 8
@@ -298,8 +299,8 @@ bindsym $mod+y exec youtube-dl -q -o- $(xsel -o) | mplayer -cache 1024 -
 bindsym $mod+Shift+y floating enable; resize set 400 300; sticky enable; move window to position 966 20
 
 # Application Shortcuts
-# Firefox
-bindsym $mod+Shift+f exec firefox;workspace $WS3;focus
+# Browser
+bindsym $mod+Shift+f exec $browser;workspace $WS3;focus
 # Thunar
 bindsym $mod+Shift+t exec thunar;workspace $WS4;focus
 
