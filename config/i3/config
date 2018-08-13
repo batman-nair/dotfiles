@@ -272,6 +272,10 @@ mode "Android Mode" {
     bindsym $mod+0 workspace $WS10
     # Terminal opened with mod+Shift+Enter
     bindsym $mod+Shift+Return exec $terminal
+    # Kill focused window
+    bindsym $mod+Shift+q kill
+    # Start rofi (program launcher)
+    bindsym $mod+d exec "rofi -modi drun -show drun -hide-scrollbar"
 	# Sreen brightness controls
 	bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
 	bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
@@ -352,7 +356,7 @@ assign [class="(?i)steam"]			    $WS6
 # 7: Multimedia Players
 assign [class=vlc|mpv]			 	    $WS7
 # 8: Chatting Apps
-assign [class=hexchat]			 	    $WS8
+assign [class=Hexchat]			 	    $WS8
 # 10: Music Player
 assign [class="(?i)ncmpcpp"]			$WS10
 
