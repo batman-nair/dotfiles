@@ -100,10 +100,8 @@ xset -b
 
 mp3search () { xdg-open "https://www.google.com/search?q=?index of? mp3 $*"; }
 
-# Import colorscheme from 'wal'
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-#(wal -tr &)
+# Source the pywal colors.
+cat /home/arjun/.cache/wal/sequences
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
