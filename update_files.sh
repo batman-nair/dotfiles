@@ -12,6 +12,7 @@ cp -rf ~/.config/termite ./config/
 cp -rf ~/.config/polybar ./config/
 cp -rf ~/.config/i3 ./config/
 cp -rf ~/.config/dunst ./config/
+cp -rf ~/.config/ranger ./config/
 
 # Other config
 cp /etc/mpd.conf .
