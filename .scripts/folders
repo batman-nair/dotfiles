@@ -1,0 +1,11 @@
+# Folders shortcuts to be synced with shortcuts.sh
+cc   ~/.config/
+ci  ~/.config/i3/
+cr  ~/.config/ranger/
+d   ~/Downloads/
+D   ~/Documents/
+m   /mnt/AA9CE4319CE3F5AB/
+pp  ~/Pictures/
+pw  ~/Pictures/Wallpapers/
+s   ~/.scripts/
+w   ~/works/

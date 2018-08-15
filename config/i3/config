@@ -308,6 +308,8 @@ bindsym $mod+Shift+y floating enable; resize set 400 300; sticky enable; move wi
 bindsym $mod+Shift+f exec $browser;workspace $WS3;focus
 # Thunar
 bindsym $mod+Shift+t exec thunar;workspace $WS4;focus
+# Ranger
+bindsym $mod+t exec termite -e "zsh -ic ranger"
 
 
 ## Startup Applications

@@ -5,6 +5,9 @@ cp ~/.xprofile .
 cp ~/.vimrc .
 cp ~/.bashrc .
 
+# Script files
+cp -rf ~/.scripts ./
+
 # Config files
 cp ~/.config/compton.conf ./config/compton.conf
 cp -rf ~/.config/rofi ./config/

@@ -106,10 +106,8 @@ cat /home/arjun/.cache/wal/sequences
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-# Config shortcuts
-alias cfi="vim ~/.config/i3/config"
-alias cfv="vim ~/.vimrc"
-alias cfz="vim ~/.zshrc"
-alias mult="/mnt/AA9CE4319CE3F5AB/"
+# Some application shortcuts
 alias colorpick="colorpicker --short --one-shot --preview | xsel -b"
 alias fehd="feh * --start-at"
+
+source ~/.shortcuts

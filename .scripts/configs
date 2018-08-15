@@ -1,0 +1,8 @@
+# Configs shortcuts to be synced with shortcuts.sh
+cff     ~/.scripts/folders
+cfc     ~/.scripts/configs
+cfi     ~/.config/i3/config
+cfr     ~/.config/ranger/rc.conf
+cfb     ~/.bashrc
+cfv     ~/.vimrc
+cfz     ~/.zshrc
