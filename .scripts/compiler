@@ -11,9 +11,11 @@ oridir=$(pwd)
 
 file=$(readlink -f "$1")
 dir=$(dirname "$file")
-ext="${filename##*.}"
+ext="${file##*.}"
 base="${file%.*}"
 cd $dir
+
+echo "Running compiler on $file"
 
 # textype() { \
 # 	command="pdflatex"
