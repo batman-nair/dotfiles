@@ -86,6 +86,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'scrooloose/nerdtree'
 
+Plug 'tpope/vim-surround'
+
 " Initialize plugin system
 call plug#end()
 
@@ -123,6 +125,33 @@ let airline#extensions#syntastic#warning_symbol = 'W:'
 " syntastic statusline warning format (see |syntastic_stl_format|)
 let airline#extensions#syntastic#stl_format_err = '%W{[%w(#%fw)]}'
 
+" Commenting stuff
+let b:commentChar='#'
+autocmd BufNewFile,BufReadPost *.[ch]    let b:commentChar='//'
+autocmd BufNewFile,BufReadPost *.cpp    let b:commentChar='//'
+autocmd BufNewFile,BufReadPost *.py    let b:commentChar='#'
+autocmd BufNewFile,BufReadPost *.*sh    let b:commentChar='#'
+function! Docomment ()
+  "make comments on all the lines we've grabbed
+  execute '''<,''>s/^\s*/&'.escape(b:commentChar, '\/').' /e'
+endfunction
+function! Uncomment ()
+  "uncomment on all our lines
+  execute '''<,''>s/\v(^\s*)'.escape(b:commentChar, '\/').'\v\s*/\1/e'
+endfunction
+function! Comment ()
+  "does the first line begin with a comment?
+  let l:line=getpos("'<")[1]
+  "if there's a match
+  if match(getline(l:line), '^\s*'.b:commentChar)>-1
+    call Uncomment()
+  else
+    call Docomment()
+  endif
+endfunction
+" For some reason in normal mode <C-/> becomes <C-_>
+nnoremap <silent> <C-_> V:<C-u>call Comment()<cr><cr>
+vnoremap <silent> <C-/> :<C-u>call Comment()<cr><cr>
 
 " base16 colorscheme fix
 " set termguicolors
