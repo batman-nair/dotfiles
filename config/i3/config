@@ -338,7 +338,7 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,s
 # Insta focus
 for_window [class=Nitrogen|Font-manager] focus
 for_window [class=vlc] focus
-for_window [class=Evince|llpp] focus
+for_window [class=Evince] focus
 # Image view floating by default
 for_window [class=Gpicview|Viewnior|feh] floating enable
 for_window [class=MPlayer] floating enable
@@ -352,7 +352,7 @@ assign [class=Firefox|qutebrowser]		$WS3
 # 4: File-managers
 assign [class=Thunar|File-roller] 		$WS4
 # 5: Document Viewers
-assign [class=Evince|llpp]				$WS5
+assign [class=Evince]				$WS5
 # 6: Games - Steam
 assign [class="(?i)steam"]			    $WS6
 # 7: Multimedia Players

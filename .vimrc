@@ -204,6 +204,16 @@ let g:syntastic_check_on_wq = 0
 
 "" Copy with Ctrl C
     map <C-c> "+y
+    map <C-p> "+P
+
+" When shortcut files are updated, renew bash and ranger configs with new material:
+	autocmd BufWritePost ~/.scripts/folders,~/.scripts/configs !bash ~/.scripts/shortcuts.sh
+
+" Disables automatic commenting on newline:
+	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" C-T for new tab
+	nnoremap <C-t> :tabnew<cr>
 
 "" Navigating with guides
     inoremap ;im <++>
@@ -211,7 +221,14 @@ let g:syntastic_check_on_wq = 0
 	vnoremap ;<Tab> <Esc>/<++><Enter>"_c4l
 	map ;<Tab> <Esc>/<++><Enter>"_c4l
 
-"" C++ Mappings
+ "____        _                  _
+"/ ___| _ __ (_)_ __  _ __   ___| |_ ___
+"\___ \| '_ \| | '_ \| '_ \ / _ \ __/ __|
+ "___) | | | | | |_) | |_) |  __/ |_\__ \
+"|____/|_| |_|_| .__/| .__/ \___|\__|___/
+              "|_|   |_|
+
+"" C++
 	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
 	autocmd Filetype cpp inoremap ;wh <Esc>Iwhile()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
@@ -226,10 +243,35 @@ let g:syntastic_check_on_wq = 0
     autocmd Filetype cpp inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
     autocmd Filetype cpp nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
 
-    """ Templates
+    " Templates
     autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
 
-    """ javascript snippets
+"" HTML
+    autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
+    autocmd FileType html inoremap ;e <em></em><Space><++><Esc>FeT>i
+    autocmd FileType html inoremap ;1 <h1></h1><Space><++><Esc>FhT>i
+    autocmd FileType html inoremap ;2 <h2></h2><Space><++><Esc>FhT>i
+    autocmd FileType html inoremap ;3 <h3></h3><Space><++><Esc>FhT>i
+    autocmd FileType html inoremap ;4 <h4></h4><Space><++><Esc>FhT>i
+    autocmd FileType html inoremap ;p <p></p><Space><++><Esc>FpT>i
+    autocmd FileType html inoremap ;a <a<Space>href=""></a><Space><++><Esc>FaT>i
+    autocmd FileType html inoremap ;i <img src="" alt="<++>"><++><esc>Fcf"a
+
+"" MARKDOWN
+	autocmd Filetype markdown,rmd inoremap ,n ---<Enter><Enter>
+	autocmd Filetype markdown,rmd inoremap ,b ****<++><Esc>F*hi
+	autocmd Filetype markdown,rmd inoremap ,s ~~~~<++><Esc>F~hi
+	autocmd Filetype markdown,rmd inoremap ,e **<++><Esc>F*i
+	autocmd Filetype markdown,rmd inoremap ,h ====<Space><++><Esc>F=hi
+	autocmd Filetype markdown,rmd inoremap ,i ![](<++>)<++><Esc>F[a
+	autocmd Filetype markdown,rmd inoremap ,a [](<++>)<++><Esc>F[a
+	autocmd Filetype markdown,rmd inoremap ,1 #<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ,2 ##<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ,3 ###<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ,4 ####<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ,l --------<Enter>
+
+"" Javascript
 	autocmd Filetype javascript inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype javascript inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
     autocmd Filetype javascript inoremap ;fu function()<Space>{<Enter><++><Enter>}<++><Esc>2=kf)

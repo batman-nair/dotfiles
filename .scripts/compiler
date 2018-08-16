@@ -11,6 +11,7 @@ oridir=$(pwd)
 
 file=$(readlink -f "$1")
 dir=$(dirname "$file")
+ext="${filename##*.}"
 base="${file%.*}"
 cd $dir
 
@@ -24,12 +25,10 @@ cd $dir
 # 	$command --output-directory="$dir" "$base"
 # 	}
 
-case "$file" in
+case "$ext" in
 	# *\.rmd) echo "require(rmarkdown); render('$file')" | R --vanilla ;;
 	# *\.tex) textype "$file" ;;
-	*\.md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
-	*\.cpp) g++ "$file" -o "$base".o ;;
-	# *config.h) make && sudo make install ;;
-	# *) sent "$file" 2>/dev/null & ;;
+	tex|md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
+	cpp) g++ "$file" -o "$base".o ;;
 esac
 cd $oridir
