@@ -103,6 +103,8 @@ mp3search () { xdg-open "https://www.google.com/search?q=?index of? mp3 $*"; }
 # Source the pywal colors.
 cat /home/arjun/.cache/wal/sequences
 
+export PATH="$PATH:$HOME/.scripts"
+export BROWSER=qutebrowser
 export VISUAL=vim
 export EDITOR="$VISUAL"
 

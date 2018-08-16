@@ -57,6 +57,8 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+let mapleader =" "
+
 call plug#begin()
 
 Plug 'tpope/vim-sensible'
@@ -147,6 +149,9 @@ set shiftwidth=4
 set number
 set relativenumber
 
+set splitbelow
+set splitright
+
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -181,8 +186,14 @@ let g:syntastic_check_on_wq = 0
     vnoremap > >gv
     vnoremap < <gv
 
-"" Press Space to turn off highlighting and clear any message already displayed.
-    nnoremap <silent><Space> :set hlsearch! hlsearch?<CR>
+"" Run compiled output of current file
+	map <leader>o :!opout <c-r>%<CR>
+
+"" Compile document
+	map <leader>c :!compiler <c-r>%<CR>
+
+" Press Space to turn off highlighting and clear any message already displayed.
+    nnoremap <silent><leader><Space> :set hlsearch! hlsearch?<CR>
 
 "" Spell-check with F6
     map <F6> :setlocal spell! spelllang=en_us<CR>
@@ -200,7 +211,7 @@ let g:syntastic_check_on_wq = 0
 	vnoremap ;<Tab> <Esc>/<++><Enter>"_c4l
 	map ;<Tab> <Esc>/<++><Enter>"_c4l
 
-"" cpp Mappings
+"" C++ Mappings
 	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
 	autocmd Filetype cpp inoremap ;wh <Esc>Iwhile()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
@@ -214,9 +225,6 @@ let g:syntastic_check_on_wq = 0
     autocmd Filetype cpp nnoremap ;co Icout<<""<<endl;<Enter><++><Esc>=kf"li
     autocmd Filetype cpp inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
     autocmd Filetype cpp nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
-
-    """ Compile and run cpp file
-    autocmd Filetype cpp nnoremap <F5> :!g++<Space><C-r>%<Space>-o<Space><C-r>%<BS><BS><BS>o<Space>&&<Space>./<C-r>%<BS><BS><BS>.o<CR>
 
     """ Templates
     autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
