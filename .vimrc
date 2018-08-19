@@ -79,6 +79,7 @@ Plug 'vim-syntastic/syntastic'
 
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline'
@@ -87,12 +88,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 " Initialize plugin system
 call plug#end()
 
 " Python Mode making default python3
 let g:pymode_python = 'python3'
+let g:pymode_rope_lookup_project = 0
+let g:pymode_rope = 0
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -161,6 +165,9 @@ vnoremap <silent> <C-/> :<C-u>call Comment()<cr><cr>
 "   Default: 237
 let g:seoul256_background = 233
 "colo seoul256
+
+" Live latex settings
+let g:livepreview_previewer = 'zathura'
 
 " Remove trailing whitespaces when saving
 autocmd BufWritePre * %s/\s\+$//e

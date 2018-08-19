@@ -109,6 +109,7 @@ export VISUAL=vim
 export EDITOR="$VISUAL"
 
 # Some application shortcuts
+alias v=vim
 alias colorpick="colorpicker --short --one-shot --preview | xsel -b"
 alias fehd="feh * --start-at"
 

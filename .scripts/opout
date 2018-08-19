@@ -4,11 +4,12 @@
 
 file=$(readlink -f "$1")
 ext="${file##*.}"
-filename="${filename%.*}"
+filename="${file%.*}"
 
 case "$ext" in
 	tex|md|rmd) llpp $filename.pdf & ;;
     cpp|h) $filename.o ;;
+    py) python $file ;;
 	html) $BROWSER $filename.html & ;;
     *) xdg-open $file
 esac

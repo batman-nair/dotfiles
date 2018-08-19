@@ -65,8 +65,10 @@ for_window [class="^.*"] border pixel 0
 hide_edge_borders both
 
 # Gaps
-gaps inner 5
-gaps outer 2
+set $gap_width_inner 5
+set $gap_width_outer 2
+gaps inner $gap_width_inner
+gaps outer $gap_width_outer
 smart_gaps on
 
 
@@ -202,17 +204,14 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+z mode "$mode_system"
 
 # Adjust gaps sizing
-bindsym $mod+Shift+g mode "$mode_gaps_inner"
-mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+bindsym $mod+Shift+g exec --no-startup-id "if [ `i3-msg -t get_tree | grep -Po \
+    '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
+        i3-msg gaps inner current set 0; \
+        i3-msg gaps outer current set 0; \
+    else \
+        i3-msg gaps inner current set $gap_width_inner; \
+        i3-msg gaps outer current set $gap_width_outer; \
+    fi"
 
 # Music Controls
 bindsym $mod+m mode "Music control"
@@ -319,6 +318,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id compton --config ~/.config/compton.conf -f -b
 # Open ncmcpp on start
 exec $terminal -e ncmpcpp --class ncmpcpp
+# Open ranger on start
+exec $terminal -e ranger --class ranger
 # Open hexchat
 exec hexchat
 
@@ -339,8 +340,9 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,s
 for_window [class=Nitrogen|Font-manager] focus
 for_window [class=vlc] focus
 for_window [class=Evince] focus
-# Image view floating by default
+# Applications with default floating enabled
 for_window [class=Gpicview|Viewnior|feh] floating enable
+for_window [class=Gvim] floating enable
 for_window [class=MPlayer] floating enable
 # This is a personal project specific rule
 # for_window [title="Lane*"] floating enable, sticky enable
@@ -348,17 +350,17 @@ for_window [class=MPlayer] floating enable
 
 ## Application Organisation
 # 3: Browsers
-assign [class=Firefox|qutebrowser]		$WS3
+assign [class=Firefox|qutebrowser]		        $WS3
 # 4: File-managers
-assign [class=Thunar|File-roller] 		$WS4
+assign [class=Thunar|File-roller|ranger]		$WS4
 # 5: Document Viewers
-assign [class=Evince]				$WS5
+assign [class=Evince]			                $WS5
 # 6: Games - Steam
-assign [class="(?i)steam"]			    $WS6
+assign [class="(?i)steam"]			            $WS6
 # 7: Multimedia Players
-assign [class=vlc|mpv]			 	    $WS7
+assign [class=vlc|mpv]			 	            $WS7
 # 8: Chatting Apps
-assign [class=Hexchat]			 	    $WS8
+assign [class=Hexchat]			 	            $WS8
 # 10: Music Player
-assign [class="(?i)ncmpcpp"]			$WS10
+assign [class="(?i)ncmpcpp"]			        $WS10
 
