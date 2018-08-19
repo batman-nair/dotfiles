@@ -112,5 +112,6 @@ export EDITOR="$VISUAL"
 alias v=vim
 alias colorpick="colorpicker --short --one-shot --preview | xsel -b"
 alias fehd="feh * --start-at"
+alias p="sudo pacman"
 
 source ~/.shortcuts
