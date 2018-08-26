@@ -31,6 +31,6 @@ case "$ext" in
 	# *\.rmd) echo "require(rmarkdown); render('$file')" | R --vanilla ;;
 	# *\.tex) textype "$file" ;;
 	tex|md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
-	cpp) g++ "$file" -o "$base".o ;;
+	cpp|cc) g++ "$file" -o "$base".o ;;
 esac
 cd $oridir
