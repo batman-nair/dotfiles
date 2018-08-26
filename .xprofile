@@ -12,6 +12,4 @@
 
 [[ -f ~/.extend.xprofile ]] && . ~/.extend.xprofile
 
-xinput --set-prop 14 296 1
-
 xset -b

@@ -76,5 +76,3 @@ wal -i "$(< "${HOME}/.cache/wal/wal")"
 # xterm -geometry 80x20+494-0 &
 #exec xterm -geometry 80x66+0+0 -name login
 
-export SUDO_ASKPASS="$HOME/bin/dpass"
-
