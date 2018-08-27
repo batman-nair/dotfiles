@@ -11,6 +11,7 @@ case "$ext" in
     cpp|cc|h) $filename.o ;;
     py) python $file ;;
 	html) $BROWSER $filename.html & ;;
+    svg) feh --magick-timeout 1 $file ;;
     *) xdg-open $file
 esac
 
