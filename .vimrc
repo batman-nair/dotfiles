@@ -229,7 +229,7 @@ let g:syntastic_check_on_wq = 0
 	map <leader>c :!compiler <c-r>%<CR>
 
 "" Open ranger
-    map <leader>t :!termite -e "zsh -ic ranger"
+    map <leader>t :!termite -e "zsh -ic ranger" &<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
     nnoremap <silent><leader><Space> :set hlsearch! hlsearch?<CR>
