@@ -268,19 +268,19 @@ let g:syntastic_check_on_wq = 0
               "|_|   |_|
 
 "" C++
-	autocmd Filetype cpp inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
-	autocmd Filetype cpp inoremap ;wh <Esc>Iwhile()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
-	autocmd Filetype cpp inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
+	autocmd Filetype cpp,c inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
+	autocmd Filetype cpp,c inoremap ;wh <Esc>Iwhile()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
+	autocmd Filetype cpp,c inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
 	autocmd Filetype cpp inoremap ;fv <Esc>Ifor(:<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf:i
-	autocmd Filetype cpp inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
+	autocmd Filetype cpp,c inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>=kf>i
 	autocmd Filetype cpp inoremap ;se <Esc>Iset<><Space><++>;<Enter><++><Esc>=kf>i
-    autocmd Filetype cpp inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
+    autocmd Filetype cpp,c inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
     autocmd Filetype cpp inoremap ;be .begin(),<Space><++>.end()<Esc>Fbhi
-    autocmd Filetype cpp inoremap ;co <Esc>Icout<<""<<endl;<Enter><++><Esc>=kf"li
-    autocmd Filetype cpp nnoremap ;co Icout<<""<<endl;<Enter><++><Esc>=kf"li
-    autocmd Filetype cpp inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
-    autocmd Filetype cpp nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
+    autocmd Filetype cpp,c inoremap ;co <Esc>Icout<<""<<endl;<Enter><++><Esc>=kf"li
+    autocmd Filetype cpp,c nnoremap ;co Icout<<""<<endl;<Enter><++><Esc>=kf"li
+    autocmd Filetype cpp,c inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
+    autocmd Filetype cpp,c nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
 
     " Templates
     autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
