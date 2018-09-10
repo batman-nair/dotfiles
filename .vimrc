@@ -90,6 +90,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+Plug 'Valloric/YouCompleteMe'
+
 " Initialize plugin system
 call plug#end()
 
@@ -259,6 +261,7 @@ let g:syntastic_check_on_wq = 0
 	inoremap ;<Tab> <Esc>/<++><Enter>"_c4l
 	vnoremap ;<Tab> <Esc>/<++><Enter>"_c4l
 	map ;<Tab> <Esc>/<++><Enter>"_c4l
+	nnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
 
  "____        _                  _
 "/ ___| _ __ (_)_ __  _ __   ___| |_ ___
@@ -269,6 +272,7 @@ let g:syntastic_check_on_wq = 0
 
 "" C++
 	autocmd Filetype cpp,c inoremap ;in <Esc>I#include<Space><><Enter><++><Esc>=kf>i
+	autocmd Filetype cpp,c inoremap ;in <++><Esc>O#include<Space><><Esc>i
 	autocmd Filetype cpp,c inoremap ;wh <Esc>Iwhile()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype cpp,c inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
 	autocmd Filetype cpp inoremap ;fv <Esc>Ifor(:<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf:i
@@ -281,6 +285,9 @@ let g:syntastic_check_on_wq = 0
     autocmd Filetype cpp,c nnoremap ;co Icout<<""<<endl;<Enter><++><Esc>=kf"li
     autocmd Filetype cpp,c inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
     autocmd Filetype cpp,c nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
+
+    " Namespace
+    autocmd Filetype cpp,c inoremap ;s: std::
 
     " Templates
     autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
