@@ -293,7 +293,10 @@ let g:syntastic_check_on_wq = 0
     autocmd Filetype cpp inoremap ;main <Esc>:read ~/code/cpp_templates/default.cpp<Enter>
 
 "" HTML
+    autocmd FileType html inoremap ;d <div><++></div><Space><++><Esc>0f>i
+    autocmd FileType html inoremap ;s <span></span><Space><++><Esc>FsT>i
     autocmd FileType html inoremap ;b <b></b><Space><++><Esc>FbT>i
+    autocmd FileType html inoremap ;c class=""<Esc>i
     autocmd FileType html inoremap ;e <em></em><Space><++><Esc>FeT>i
     autocmd FileType html inoremap ;1 <h1></h1><Space><++><Esc>FhT>i
     autocmd FileType html inoremap ;2 <h2></h2><Space><++><Esc>FhT>i

@@ -338,7 +338,7 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,s
 ## Application specific rules
 # Insta focus
 for_window [class=Nitrogen|Font-manager] focus
-for_window [class=vlc] focus
+for_window [class=vlc|mpv] focus
 for_window [class=Evince] focus
 # Applications with default floating enabled
 for_window [class=Gpicview|Viewnior|feh] floating enable
