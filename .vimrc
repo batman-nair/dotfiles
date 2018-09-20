@@ -90,8 +90,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
-Plug 'Valloric/YouCompleteMe'
-
 " Initialize plugin system
 call plug#end()
 
