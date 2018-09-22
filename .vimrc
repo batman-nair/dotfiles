@@ -229,7 +229,7 @@ let g:syntastic_check_on_wq = 0
 	map <leader>c :!compiler <c-r>%<CR>
 
 "" Open ranger
-    map <leader>t :!termite -e "zsh -ic ranger" &<CR>
+    map <leader>t :!termite -e "zsh -ic ranger" & disown<CR>
 
 " Press Space to turn off highlighting and clear any message already displayed.
     nnoremap <silent><leader><Space> :set hlsearch! hlsearch?<CR>
@@ -260,6 +260,9 @@ let g:syntastic_check_on_wq = 0
 	vnoremap ;<Tab> <Esc>/<++><Enter>"_c4l
 	map ;<Tab> <Esc>/<++><Enter>"_c4l
 	nnoremap <Space><Tab> <Esc>/<++><Enter>"_c4l
+
+"" Block shortcut
+    inoremap {<Enter> {<Enter>}<++><Esc>O
 
  "____        _                  _
 "/ ___| _ __ (_)_ __  _ __   ___| |_ ___

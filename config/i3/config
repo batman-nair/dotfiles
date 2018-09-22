@@ -159,9 +159,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
 
 
 ## Custom Mappings
@@ -217,16 +217,16 @@ bindsym $mod+Shift+g exec --no-startup-id "if [ `i3-msg -t get_tree | grep -Po \
 bindsym $mod+m mode "Music control"
 mode "Music control" {
 	# Pulse Audio controls
-	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
     # Sound Controls
-	bindsym plus exec --no-startup-id pactl set-sink-volume 0 +5%
-	bindsym minus exec --no-startup-id pactl set-sink-volume 0 -5%
-	bindsym Up exec --no-startup-id pactl set-sink-volume 0 +5%
-	bindsym Down exec --no-startup-id pactl set-sink-volume 0 -5%
-    bindsym i exec --no-startup-id pactl set-sink-volume 0 +5%
-    bindsym k exec --no-startup-id pactl set-sink-volume 0 -5%
+	bindsym plus exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+	bindsym minus exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+	bindsym Up exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+	bindsym Down exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+    bindsym i exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+    bindsym k exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
     # Playback controls
 	bindsym j exec --no-startup-id mpc prev
 	bindsym l exec --no-startup-id mpc next
@@ -248,9 +248,9 @@ mode "Game Mode" {
 	bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
 	bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 	# Pulse Audio controls
-	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
     # Press the same combination to exit
     bindsym $mod+Shift+o mode "default"
 }
@@ -279,9 +279,9 @@ mode "Android Mode" {
 	bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
 	bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 	# Pulse Audio controls
-	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+	bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
     # Press the same combination to exit
     bindsym $mod+Shift+a mode "default"
 }

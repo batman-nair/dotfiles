@@ -32,5 +32,6 @@ case "$ext" in
 	# *\.tex) textype "$file" ;;
 	tex|md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
 	cpp|cc) g++ "$file" -o "$base".o ;;
+    scss) sassc "$file" "$base".css ;;
 esac
 cd $oridir
