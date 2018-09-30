@@ -282,8 +282,8 @@ let g:syntastic_check_on_wq = 0
 	autocmd Filetype cpp inoremap ;se <Esc>Iset<><Space><++>;<Enter><++><Esc>=kf>i
     autocmd Filetype cpp,c inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
     autocmd Filetype cpp inoremap ;be .begin(),<Space><++>.end()<Esc>Fbhi
-    autocmd Filetype cpp,c inoremap ;co <Esc>Icout<<""<<endl;<Enter><++><Esc>=kf"li
-    autocmd Filetype cpp,c nnoremap ;co Icout<<""<<endl;<Enter><++><Esc>=kf"li
+    autocmd Filetype cpp,c inoremap ;co <Esc>Icout<<<<endl;<Enter><++><Esc>=ktehi
+    autocmd Filetype cpp,c nnoremap ;co Icout<<<<endl;<Enter><++><Esc>=ktehi
     autocmd Filetype cpp,c inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
     autocmd Filetype cpp,c nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
 

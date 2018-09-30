@@ -8,7 +8,7 @@ filename="${file%.*}"
 
 case "$ext" in
 	tex|md|rmd) llpp $filename.pdf & ;;
-    cpp|cc|h) $filename.o ;;
+    cpp|cc|c|h) $filename.o ;;
     py) python $file ;;
 	html) $BROWSER $filename.html & ;;
     svg) feh --magick-timeout 1 $file ;;
