@@ -162,6 +162,11 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 2
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
+# Headset controls
+## Play and Pause toggle as they are the same key giving alternative signals
+bindsym XF86AudioPause exec --no-startup-id mpc toggle
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+
 
 
 ## Custom Mappings
