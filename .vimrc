@@ -61,34 +61,36 @@ let mapleader =" "
 
 call plug#begin()
 
-Plug 'tpope/vim-sensible'
-Plug 'zhou13/vim-easyescape'
+Plug 'zhou13/vim-easyescape'    " Quick press jk or kj for escape
 
-Plug 'dylanaraps/wal.vim'
+Plug 'dylanaraps/wal.vim'   " Wal colorscheme according to wallpaper
 
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim'    " Cool mode for distraction less writing
 
-Plug 'junegunn/seoul256.vim'
+Plug 'junegunn/seoul256.vim'    " Dark and clear colorscheme
 
-Plug 'klen/python-mode'
+Plug 'klen/python-mode'     " Python checker and stuff
 
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'   " This shows the + and - changes for file
 
-Plug 'easymotion/vim-easymotion'
-Plug 'vim-syntastic/syntastic'
+Plug 'easymotion/vim-easymotion'    " Quick move to anywhere on screen
+Plug 'vim-syntastic/syntastic'      " Awesome syntax and code checker
 
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
 
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'      " The statusbar below
+Plug 'vim-airline/vim-airline-themes'  " Themes for the statusbar
 
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'      " Simple file tree can be opened on right side
 
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'       " Easy add remove quotes and stuff around a word
+Plug 'tpope/vim-repeat'         " Need for the surround to repeat
+
+Plug 'Valloric/YouCompleteMe'
+
+Plug 'tomtom/tcomment_vim'      " Auto comment based on the filetype
 
 " Initialize plugin system
 call plug#end()
@@ -129,37 +131,6 @@ let airline#extensions#syntastic#warning_symbol = 'W:'
 " syntastic statusline warning format (see |syntastic_stl_format|)
 let airline#extensions#syntastic#stl_format_err = '%W{[%w(#%fw)]}'
 
-" Commenting stuff
-let b:commentChar='#'
-autocmd BufNewFile,BufReadPost *.[ch]    let b:commentChar='//'
-autocmd BufNewFile,BufReadPost *.cpp    let b:commentChar='//'
-autocmd BufNewFile,BufReadPost *.py    let b:commentChar='#'
-autocmd BufNewFile,BufReadPost *.*sh    let b:commentChar='#'
-function! Docomment ()
-  "make comments on all the lines we've grabbed
-  execute '''<,''>s/^\s*/&'.escape(b:commentChar, '\/').' /e'
-endfunction
-function! Uncomment ()
-  "uncomment on all our lines
-  execute '''<,''>s/\v(^\s*)'.escape(b:commentChar, '\/').'\v\s*/\1/e'
-endfunction
-function! Comment ()
-  "does the first line begin with a comment?
-  let l:line=getpos("'<")[1]
-  "if there's a match
-  if match(getline(l:line), '^\s*'.b:commentChar)>-1
-    call Uncomment()
-  else
-    call Docomment()
-  endif
-endfunction
-" For some reason in normal mode <C-/> becomes <C-_>
-nnoremap <silent> <C-_> V:<C-u>call Comment()<cr><cr>
-vnoremap <silent> <C-/> :<C-u>call Comment()<cr><cr>
-
-" base16 colorscheme fix
-" set termguicolors
-
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
@@ -188,6 +159,9 @@ set relativenumber
 set splitbelow
 set splitright
 
+set ignorecase
+set smartcase
+
 " Syntastic recommended settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -199,9 +173,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " MAPPINGS
-
-"" Change to solid colorscheme
-    map <F2> :set termguicolors!<CR>:colo base16-monokai<CR>
 
 "" NERDTree shortcut
     map <C-n> :NERDTreeToggle<CR>
@@ -308,18 +279,20 @@ let g:syntastic_check_on_wq = 0
     autocmd FileType html inoremap ;i <img src="" alt="<++>"><++><esc>Fcf"a
 
 "" MARKDOWN
-	autocmd Filetype markdown,rmd inoremap ,n ---<Enter><Enter>
-	autocmd Filetype markdown,rmd inoremap ,b ****<++><Esc>F*hi
-	autocmd Filetype markdown,rmd inoremap ,s ~~~~<++><Esc>F~hi
-	autocmd Filetype markdown,rmd inoremap ,e **<++><Esc>F*i
-	autocmd Filetype markdown,rmd inoremap ,h ====<Space><++><Esc>F=hi
-	autocmd Filetype markdown,rmd inoremap ,i ![](<++>)<++><Esc>F[a
-	autocmd Filetype markdown,rmd inoremap ,a [](<++>)<++><Esc>F[a
-	autocmd Filetype markdown,rmd inoremap ,1 #<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,2 ##<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,3 ###<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,4 ####<Space><Enter><++><Esc>kA
-	autocmd Filetype markdown,rmd inoremap ,l --------<Enter>
+    autocmd Filetype markdown Goyo
+	autocmd Filetype markdown,rmd inoremap ;n ---<Enter><Enter>
+	autocmd Filetype markdown,rmd inoremap ;b ****<++><Esc>F*hi
+	autocmd Filetype markdown,rmd inoremap ;s ~~~~<++><Esc>F~hi
+	autocmd Filetype markdown,rmd inoremap ;e **<++><Esc>F*i
+	autocmd Filetype markdown,rmd inoremap ;h ====<Space><++><Esc>F=hi
+	autocmd Filetype markdown,rmd inoremap ;i ![](<++>)<++><Esc>F[a
+	autocmd Filetype markdown,rmd inoremap ;a [](<++>)<++><Esc>F[a
+	autocmd Filetype markdown,rmd inoremap ;1 #<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ;t #<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ;2 ##<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ;3 ###<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ;4 ####<Space><Enter><++><Esc>kA
+	autocmd Filetype markdown,rmd inoremap ;l --------<Enter>
 
 "" Javascript
 	autocmd Filetype javascript inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i

@@ -325,6 +325,8 @@ exec_always --no-startup-id compton --config ~/.config/compton.conf -f -b
 exec $terminal -e ncmpcpp --class ncmpcpp
 # Open ranger on start
 exec $terminal -e ranger --class ranger
+# Open todo notes list on start
+exec $terminal -e "zsh -ic 'vim ~/.todo.md'" --class todo
 # Open hexchat
 exec hexchat
 
@@ -366,6 +368,8 @@ assign [class="(?i)steam"]			            $WS6
 assign [class=vlc|mpv]			 	            $WS7
 # 8: Chatting Apps
 assign [class=Hexchat]			 	            $WS8
+# 9: Todo and Random
+assign [class=todo]                     		$WS9
 # 10: Music Player
 assign [class="(?i)ncmpcpp"]			        $WS10
 
