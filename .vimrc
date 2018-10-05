@@ -88,7 +88,7 @@ Plug 'scrooloose/nerdtree'      " Simple file tree can be opened on right side
 Plug 'tpope/vim-surround'       " Easy add remove quotes and stuff around a word
 Plug 'tpope/vim-repeat'         " Need for the surround to repeat
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'   " Pretty cool autocomplete
 
 Plug 'tomtom/tcomment_vim'      " Auto comment based on the filetype
 
@@ -171,6 +171,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" YCM Settings
+let g:ycm_global_ycm_extra_conf = '~/.config/global_ycm_extra_conf.py'
+
+"" YCM Shortcuts
+    nnoremap <leader>jD :YcmCompleter GetDoc<CR>
+    nnoremap <leader>jd :YcmCompleter GoTo<CR>
+    nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
 " MAPPINGS
 
