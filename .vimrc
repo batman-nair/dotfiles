@@ -92,6 +92,9 @@ Plug 'Valloric/YouCompleteMe'   " Pretty cool autocomplete
 
 Plug 'tomtom/tcomment_vim'      " Auto comment based on the filetype
 
+Plug 'mattn/emmet-vim'          " Emmet snippets for web
+
+
 " Initialize plugin system
 call plug#end()
 
@@ -179,6 +182,10 @@ let g:ycm_global_ycm_extra_conf = '~/.config/global_ycm_extra_conf.py'
     nnoremap <leader>jD :YcmCompleter GetDoc<CR>
     nnoremap <leader>jd :YcmCompleter GoTo<CR>
     nnoremap <leader>jf :YcmCompleter FixIt<CR>
+
+" Emmet Settings
+let g:user_emmet_leader_key = ','
+
 
 " MAPPINGS
 

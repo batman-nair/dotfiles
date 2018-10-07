@@ -96,6 +96,7 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_IN.UTF-8
 
+# Silence the bell error beeps
 xset -b
 
 mp3search () { xdg-open "https://www.google.com/search?q=?index of? mp3 $*"; }

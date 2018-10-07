@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Creates shortcuts for various keybindings on ranger and shell based on the files configs and folders
+
 # Shell rc file (i.e. bash vs. zsh, etc.)
 shellrc="$HOME/.zshrc"
 

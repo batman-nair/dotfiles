@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # This script will compile or run another finishing operation on a document. I
-# have this script run via vim.
+# have this script run via vim and ranger.
 #
-# md files: Compiles to pdf via pandoc
-# rmd files: Compiles via R Markdown
-# all others: run `sent` to show a presentation
+
 
 oridir=$(pwd)
 
@@ -30,8 +28,9 @@ echo "Running compiler on $file"
 case "$ext" in
 	# *\.rmd) echo "require(rmarkdown); render('$file')" | R --vanilla ;;
 	# *\.tex) textype "$file" ;;
-	tex|md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
-	cpp|cc) g++ "$file" -o "$base".o ;;
+	md) pandoc "$file" --pdf-engine=xelatex -o "$base".pdf ;;
+	tex) pdflatex "$file" ;;
+	cpp|cc) g++ "$file" -Wall -o "$base".o ;;
 	c) gcc "$file" -o "$base".o ;;
     scss) sassc "$file" "$base".css ;;
 esac

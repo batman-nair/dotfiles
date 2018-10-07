@@ -7,7 +7,7 @@ ext="${file##*.}"
 filename="${file%.*}"
 
 case "$ext" in
-	tex|md|rmd) llpp $filename.pdf & ;;
+	tex|md|rmd) zathura $filename.pdf & ;;
     cpp|cc|c|h) $filename.o ;;
     py) python $file ;;
 	html) $BROWSER $filename.html & ;;

@@ -1,2 +1,3 @@
 #!/bin/bash
+# Script to handle passwords asking through dmenu
 dmenu -p "$1" <&- && echo

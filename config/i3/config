@@ -317,6 +317,17 @@ bindsym $mod+Shift+t exec thunar;workspace $WS4;focus
 bindsym $mod+t exec termite -e "zsh -ic ranger"
 
 
+## Startup Options
+# Random wallpaper for lockscreen
+exec --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers
+# Random wallpaper with color scheme change
+exec --no-startup-id wal -i ~/Pictures/Wallpapers/ -t
+# Tapping enable
+exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+# Unlock gnome keyring
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
+
+
 ## Startup Applications
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -327,20 +338,9 @@ exec $terminal -e ncmpcpp --class ncmpcpp
 # Open ranger on start
 exec $terminal -e ranger --class ranger
 # Open todo notes list on start
-exec $terminal -e "zsh -ic 'vim ~/.todo.md'" --class todo
+exec $terminal -e "zsh -ic 'vim -n ~/.todo.md'" --class todo
 # Open hexchat
 exec hexchat
-
-
-## Startup Options
-# Random wallpaper for lockscreen
-exec --no-startup-id betterlockscreen -u ~/Pictures/Wallpapers
-# Random wallpaper with color scheme change
-exec --no-startup-id wal -i ~/Pictures/Wallpapers/ -t
-# Tapping enable
-exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-# Unlock gnome keyring
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh
 
 
 ## Application specific rules
