@@ -70,7 +70,7 @@ set $gap_width_inner 5
 set $gap_width_outer 2
 gaps inner $gap_width_inner
 gaps outer $gap_width_outer
-smart_gaps on
+# smart_gaps on
 
 
 ## Basic Mappings
@@ -209,7 +209,7 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 bindsym $mod+z mode "$mode_system"
 
-# Adjust gaps sizing
+# Toggle between no gaps and gaps
 bindsym $mod+Shift+g exec --no-startup-id "if [ `i3-msg -t get_tree | grep -Po \
     '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
         i3-msg gaps inner current set 0; \
