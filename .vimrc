@@ -264,14 +264,14 @@ let g:user_emmet_leader_key = ','
 	autocmd Filetype cpp,c inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
 	autocmd Filetype cpp inoremap ;fv <Esc>Ifor(:<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf:i
 	autocmd Filetype cpp,c inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
-	autocmd Filetype cpp inoremap ;ve <Esc>Ivector<><Space><++>;<Enter><++><Esc>=kf>i
-	autocmd Filetype cpp inoremap ;se <Esc>Iset<><Space><++>;<Enter><++><Esc>=kf>i
+	autocmd Filetype cpp inoremap ;ve <Esc>Istd::vector<><Space><++>;<Enter><++><Esc>=kf>i
+	autocmd Filetype cpp inoremap ;se <Esc>Istd::set<><Space><++>;<Enter><++><Esc>=kf>i
     autocmd Filetype cpp,c inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
     autocmd Filetype cpp inoremap ;be .begin(),<Space><++>.end()<Esc>Fbhi
-    autocmd Filetype cpp,c inoremap ;co <Esc>Icout<<<<endl;<Enter><++><Esc>=ktehi
-    autocmd Filetype cpp,c nnoremap ;co Icout<<<<endl;<Enter><++><Esc>=ktehi
-    autocmd Filetype cpp,c inoremap ;cd <Esc>Ocout<<"Debug:"<<endl;<Esc><F"i
-    autocmd Filetype cpp,c nnoremap ;cd Ocout<<"Debug:"<<endl;<Esc><F"i
+    autocmd Filetype cpp,c inoremap ;co <Esc>Istd::cout<<<<std::endl;<Enter><++><Esc>=kte6hi
+    autocmd Filetype cpp,c nnoremap ;co Istd::cout<<<<std::endl;<Enter><++><Esc>=kte6hi
+    autocmd Filetype cpp,c inoremap ;cd <Esc>Ostd::cout<<"Debug:"<<std::endl;<Esc><F"i
+    autocmd Filetype cpp,c nnoremap ;cd Ostd::cout<<"Debug:"<<std::endl;<Esc><F"i
 
     " Namespace
     autocmd Filetype cpp,c inoremap ;s: std::
