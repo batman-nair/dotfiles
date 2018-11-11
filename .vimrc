@@ -181,6 +181,7 @@ let g:ycm_global_ycm_extra_conf = '~/.config/global_ycm_extra_conf.py'
 "" YCM Shortcuts
     nnoremap <leader>jD :YcmCompleter GetDoc<CR>
     nnoremap <leader>jd :YcmCompleter GoTo<CR>
+    nnoremap <leader>jt :YcmCompleter GetType<CR>
     nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
 " Emmet Settings
