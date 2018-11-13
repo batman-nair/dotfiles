@@ -248,7 +248,7 @@ mode "Music control" {
 }
 
 # Game Mode - minimal shortcuts environment
-bindsym $mod+Shift+o mode "Game Mode"
+bindsym $mod+Shift+o exec cpupower frequency-info -g performance; exec killall compton; mode "Game Mode"
 mode "Game Mode" {
 	# Sreen brightness controls
 	bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 2
@@ -258,7 +258,7 @@ mode "Game Mode" {
 	bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
 	bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
     # Press the same combination to exit
-    bindsym $mod+Shift+o mode "default"
+    bindsym $mod+Shift+o exec cpupower frequency-info -g powersave; mode "default"
 }
 
 # Android Mode - no Alt-Enter shortcut, has basic stuff like workspace motion
