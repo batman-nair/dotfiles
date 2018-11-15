@@ -314,3 +314,8 @@ let g:user_emmet_leader_key = ','
 	autocmd Filetype javascript inoremap ;if <Esc>Iif()<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf)i
 	autocmd Filetype javascript inoremap ;fo <Esc>Ifor(;<Space><++>;<Space><++>)<Space>{<Enter><++><Enter>}<Enter><Esc>3=kf;i
     autocmd Filetype javascript inoremap ;fu function()<Space>{<Enter><++><Enter>}<++><Esc>2=kf)
+
+"" LaTeX
+autocmd Filetype tex inoremap ;be \begin{}<Enter>\end{<++>}<Esc>k0f}i
+    autocmd Filetype tex inoremap ;bi \bibitem{}<Enter><++>\textit{<++>}<++><Esc>k0f}i
+

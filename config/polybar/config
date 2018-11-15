@@ -13,6 +13,7 @@ color5 = ${xrdb:color5}
 color6 = ${xrdb:color6}
 color7 = ${xrdb:color7}
 
+xrdbforeground = ${xrdb:foreground}
 foreground = ${bar/mybar.color4}
 bg = ${xrdb:color2}
 
@@ -323,7 +324,7 @@ click-right = playerctl next
 type = custom/script
 interval = 1
 
-label-foreground = ${bar/mybar.color1}
+label-foreground = ${bar/mybar.xrdbforeground}
 label = %output:0:45:...%
 exec = ~/.config/polybar/mpdmusic.sh
 click-left = mpc prev
