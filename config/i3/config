@@ -167,6 +167,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $(pacmd list-sink
 ## Play and Pause toggle as they are the same key giving alternative signals
 bindsym XF86AudioPause exec --no-startup-id mpc toggle
 bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioNext exec --no-startup-id mpc next
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
 
 
 

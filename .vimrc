@@ -134,6 +134,10 @@ let airline#extensions#syntastic#warning_symbol = 'W:'
 " syntastic statusline warning format (see |syntastic_stl_format|)
 let airline#extensions#syntastic#stl_format_err = '%W{[%w(#%fw)]}'
 
+" Change default tex checker
+let g:syntastic_tex_checkers = ['lacheck']
+
+
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
