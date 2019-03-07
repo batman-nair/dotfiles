@@ -152,6 +152,8 @@ autocmd BufWritePre * %s/\s\+$//e
 
 colorscheme wal
 
+set encoding=utf-8
+
 set backupdir=~/.vim/tmp//,.
 set directory=~/.vim/tmp//,.
 set undodir=~/.vim/tmp//,.
@@ -273,10 +275,10 @@ let g:user_emmet_leader_key = ','
 	autocmd Filetype cpp inoremap ;se <Esc>Istd::set<><Space><++>;<Enter><++><Esc>=kf>i
     autocmd Filetype cpp,c inoremap ;def <Esc>I#define<Space><Enter><++><Esc>kA
     autocmd Filetype cpp inoremap ;be .begin(),<Space><++>.end()<Esc>Fbhi
-    autocmd Filetype cpp,c inoremap ;co <Esc>Istd::cout<<<<std::endl;<Enter><++><Esc>=kte6hi
-    autocmd Filetype cpp,c nnoremap ;co Istd::cout<<<<std::endl;<Enter><++><Esc>=kte6hi
-    autocmd Filetype cpp,c inoremap ;cd <Esc>Ostd::cout<<"Debug:"<<std::endl;<Esc><F"i
-    autocmd Filetype cpp,c nnoremap ;cd Ostd::cout<<"Debug:"<<std::endl;<Esc><F"i
+    autocmd Filetype cpp,c inoremap ;co <Esc>Istd::cout<Space><<<Space><Space><<<Space>std::endl;<Enter><++><Esc>=kte8hi
+    autocmd Filetype cpp,c nnoremap ;co Istd::cout<Space><<<Space><Space><<<Space>std::endl;<Enter><++><Esc>=kte8hi
+    autocmd Filetype cpp,c inoremap ;cd <Esc>Ostd::cout<Space><<<Space>"Debug:"<Space><<<Space>std::endl;<Esc><F"i
+    autocmd Filetype cpp,c nnoremap ;cd Ostd::cout<Space><<<Space>"Debug:"<Space><<<Space>std::endl;<Esc><F"i
 
     " Namespace
     autocmd Filetype cpp,c inoremap ;s: std::
