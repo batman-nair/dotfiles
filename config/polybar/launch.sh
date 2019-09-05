@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/sh
 
 # Terminate already running bar instances
 killall -q polybar
@@ -7,4 +7,4 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar
-polybar mybar &
+polybar --config=/home/arjun/.config/polybar/config mybar &

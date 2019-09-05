@@ -48,3 +48,5 @@ mp3search () { firefox -search "?index of? mp3 $*"; }
 
 export VISUAL=vim
 export EDITOR="$VISUAL"
+
+source ~/.shortcuts

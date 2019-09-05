@@ -4,7 +4,7 @@
 #
 
 # Alt key set as mod
-set $mod mod1
+set $mod mod4
 # Terminal set as termite
 set $terminal termite
 set $browser qutebrowser
@@ -332,17 +332,22 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=pkcs11,s
 
 ## Startup Applications
 # Polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id /home/arjun/.config/polybar/launch.sh
+# Adding this because polybar doesn't open on startup properly
+exec --no-startup-id sleep 5; polybar -r mybar
 # Compton
 exec_always --no-startup-id compton --config ~/.config/compton.conf -f -b
-# Open ncmcpp on start
-exec $terminal -e ncmpcpp --class ncmpcpp
+# Open music player on start
+# exec $terminal -e ncmpcpp --class ncmpcpp
+exec spotify
 # Open ranger on start
 exec $terminal -e ranger --class ranger
 # Open todo notes list on start
 exec $terminal -e "zsh -ic 'vim -n ~/.todo.md'" --class todo
 # Open hexchat
 exec hexchat
+# Open emacs
+exec emacs
 
 
 ## Application specific rules
@@ -359,6 +364,8 @@ for_window [class=MPlayer] floating enable
 
 
 ## Application Organisation
+# 2: Code Envirnoment
+assign [class=Emacs]            		        $WS2
 # 3: Browsers
 assign [class=Firefox|qutebrowser]		        $WS3
 # 4: File-managers
@@ -374,5 +381,6 @@ assign [class=Hexchat]			 	            $WS8
 # 9: Todo and Random
 assign [class=todo]                     		$WS9
 # 10: Music Player
-assign [class="(?i)ncmpcpp"]			        $WS10
-
+assign [class="(?i)ncmpcpp"]         	        $WS10
+# Spotify special case
+for_window [class="Spotify"] move to workspace $ws10

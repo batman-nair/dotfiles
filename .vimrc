@@ -69,7 +69,7 @@ Plug 'junegunn/goyo.vim'    " Cool mode for distraction less writing
 
 Plug 'junegunn/seoul256.vim'    " Dark and clear colorscheme
 
-Plug 'klen/python-mode'     " Python checker and stuff
+" Plug 'klen/python-mode'     " Python checker and stuff
 
 Plug 'airblade/vim-gitgutter'   " This shows the + and - changes for file
 
@@ -99,9 +99,9 @@ Plug 'mattn/emmet-vim'          " Emmet snippets for web
 call plug#end()
 
 " Python Mode making default python3
-let g:pymode_python = 'python3'
-let g:pymode_rope_lookup_project = 0
-let g:pymode_rope = 0
+" let g:pymode_python = 'python3'
+" let g:pymode_rope_lookup_project = 0
+" let g:pymode_rope = 0
 
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 
@@ -191,7 +191,7 @@ let g:ycm_global_ycm_extra_conf = '~/.config/global_ycm_extra_conf.py'
     nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
 " Emmet Settings
-let g:user_emmet_leader_key = ','
+" let g:user_emmet_leader_key = ','
 
 
 " MAPPINGS

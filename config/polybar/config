@@ -1,5 +1,4 @@
 [bar/mybar]
-monitor = eDP-1
 width = 100%
 bottom = true
 height = 22
@@ -33,11 +32,10 @@ font-2 = MaterialIcons:size=10;0
 font-3 = Misc Termsynu:size=8:antialias=false;-2
 
 modules-left = i3
-modules-center = mpdmusic
+modules-center = music
 modules-right = pavolume backlight wireless-network wired-network battery date
 
 [bar/bottom]
-monitor = eDP-1
 bottom = true
 width = 100%
 height = 27

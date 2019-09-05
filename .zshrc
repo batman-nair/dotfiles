@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 export LANG=en_IN.UTF-8
+export LC_ALL=C
 
 # Silence the bell error beeps
 xset -b
@@ -102,7 +103,7 @@ xset -b
 mp3search () { xdg-open "https://www.google.com/search?q=?index of? mp3 $*"; }
 
 # Source the pywal colors.
-cat /home/arjun/.cache/wal/sequences
+# cat /home/arjun/.cache/wal/sequences
 
 export PATH="$PATH:$HOME/.scripts"
 export BROWSER=qutebrowser
