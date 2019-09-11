@@ -36,6 +36,7 @@ colors() {
 [ -r /usr/share/bash-completion/bash_completion   ] && . /usr/share/bash-completion/bash_completion
 
 export LANG=en_IN.UTF-8
+export LC_ALL=C
 
 xset -b
 
