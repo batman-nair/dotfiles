@@ -83,6 +83,7 @@ bindsym $mod+Shift+q kill
 
 # Start rofi (program launcher)
 bindsym $mod+d exec "rofi -modi drun -show drun -hide-scrollbar"
+bindsym $mod+u exec /home/arjun/.scripts/utility
 
 
 ## Window controls
@@ -338,7 +339,7 @@ exec --no-startup-id sleep 5; polybar -r mybar
 exec_always --no-startup-id compton --config ~/.config/compton.conf -f -b
 # Open music player on start
 # exec $terminal -e ncmpcpp --class ncmpcpp
-exec spotify
+# exec spotify
 # Open ranger on start
 exec $terminal -e ranger --class ranger
 # Open todo notes list on start

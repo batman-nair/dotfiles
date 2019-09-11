@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+devices=$(bluetoothctl -- devices | awk '{print $3 "\t" $2}')
+
+menu="${devices} \nDisconnect"
+cmd="$(echo -e "$menu" | rofi -dmenu -p bluetooth)"
+
+if [ -z "$cmd" ]
+then
+    exit;
+fi
+
+case $cmd in
+    Disconnect) bluetoothctl -- disconnect ;;
+    *) dev_id=$(echo "$cmd" | awk '{print $2}'); bluetoothctl -- connect $dev_id ;;
+esac

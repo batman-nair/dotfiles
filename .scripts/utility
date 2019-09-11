@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+
+menu="Bluetooth\n"
+menu+="WiFi\n"
+
+cmd="$(echo -e "$menu" | rofi -dmenu -p Control)"
+
+if [ -z "$cmd" ]
+then
+    exit;
+fi
+
+case $cmd in
+    Bluetooth) ./btmenu ;;
+    WiFi) networkmanager_dmenu ;; # Uses networkmanager_dmenu, check in github
+esac
