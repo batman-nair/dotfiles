@@ -4,6 +4,7 @@ cp ~/.xinitrc .
 cp ~/.xprofile .
 cp ~/.vimrc .
 cp ~/.bashrc .
+cp ~/.emacs .
 
 # Script files
 cp -rf ~/.scripts ./
