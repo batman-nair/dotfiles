@@ -14,7 +14,7 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(initial-buffer-choice (quote shell))
- '(package-selected-packages (quote (telephone-line undo-tree evil))))
+ '(package-selected-packages (quote (evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -70,7 +70,7 @@
 (require 'telephone-line)
 (telephone-line-mode 1)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; eVIl Mode Activated
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'evil)
@@ -91,3 +91,30 @@
 (define-key evil-normal-state-map (kbd "C-.") 'undo-tree-redo)
 (define-key evil-insert-state-map (kbd "C-.") 'undo-tree-redo)
 (define-key evil-visual-state-map (kbd "C-.") 'undo-tree-redo)
+
+;; Vim Surround
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Ediff Mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load-library "ediff")
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-horizontally)
+
+;; Return to previous window config on quit
+(winner-mode)
+(add-hook 'ediff-after-quit-hook-internal 'winner-undo)
+
+;; Add jk movement in ediff
+(defun ora-ediff-hook ()
+  (ediff-setup-keymap)
+  (define-key ediff-mode-map "j" 'ediff-next-difference)
+  (define-key ediff-mode-map "k" 'ediff-previous-difference))
+(add-hook 'ediff-mode-hook 'ora-ediff-hook)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Magit
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(global-set-key (kbd "C-x g") 'magit-status)

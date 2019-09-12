@@ -11,6 +11,6 @@ then
 fi
 
 case $cmd in
-    Bluetooth) ./btmenu ;;
+    Bluetooth) /home/arjun/.scripts/btmenu ;;
     WiFi) networkmanager_dmenu ;; # Uses networkmanager_dmenu, check in github
 esac
