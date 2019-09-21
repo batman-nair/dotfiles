@@ -57,6 +57,7 @@ bindsym $mod+Ctrl+Left workspace prev
 bindsym $mod+Ctrl+Right workspace next
 bindsym $mod+p workspace prev
 bindsym $mod+n workspace next
+bindsym $mod+semicolon workspace next
 bindsym $mod+Shift+semicolon workspace back_and_forth
 bindsym $mod+Ctrl+Down workspace back_and_forth
 
@@ -342,8 +343,6 @@ exec_always --no-startup-id compton --config ~/.config/compton.conf -f -b
 # exec spotify
 # Open ranger on start
 exec $terminal -e ranger --class ranger
-# Open todo notes list on start
-exec $terminal -e "zsh -ic 'vim -n ~/.todo.md'" --class todo
 # Open hexchat
 exec hexchat
 # Open emacs
