@@ -2,10 +2,10 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
-
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+(add-to-list 'package-archives
+             '("MELPA" . "https://melpa.org/packages/") t)
+(package-initialize)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -14,7 +14,9 @@
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(initial-buffer-choice (quote shell))
- '(package-selected-packages (quote (evil-surround magit telephone-line undo-tree evil))))
+ '(package-selected-packages
+   (quote
+    (cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -24,9 +26,6 @@
 
 ;; Manually installed packages go here
 (add-to-list 'load-path "~/.emacs.d/lisp/")
-
-;; Enable cmake-mode
-(require 'cmake-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Emacs Look & Feel
@@ -118,3 +117,53 @@
 ;; Magit
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; IDE Features
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+(with-eval-after-load 'flycheck
+  (setq-default flycheck-disabled-checkers '(emacs-lisp emacs-lisp-checkdoc)))
+
+;; cmake-ide setup
+(cmake-ide-setup)
+
+;; Compilation Shortcut
+(global-set-key (kbd "C-x C-e")  'compile)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Org-Mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq org-agenda-files (quote ("~/org/todo.org")))
+
+(setq org-use-fast-todo-selection t)
+(setq org-todo-keywords
+  '((sequence "TODO(t)" "IN-PROGRESS(p)" "DONE(d)" "STASHED(s)")))
+(setq org-todo-keyword-faces
+  '(("IN-PROGRESS" . "orange")
+   ("STASHED" . "grey")))
+
+(setq org-default-notes-file "~/org/todo.org")
+(setq org-capture-templates
+      '(("t" "Todo" entry
+	 (file+headline "~/org/todo.org" "General Tasks")
+	 "* TODO %i%?\n")
+	("l" "Todo with link" entry
+	 (file+headline "~/org/todo.org" "General Tasks")
+	 "* TODO %i%?\n%a")
+	("s" "Tasks done someday" entry
+	 (file+headline "~/org/todo.org" "Someday sometime")
+	 "* STASHED %i%?\n")
+	("n" "Note" entry
+	 (file+headline "~/org/todo.org" "Notes")
+	 "* %i%?\n")
+	("i" "Idea" entry
+	 (file+headline "~/org/todo.org" "Random Ideas")
+	 "* %i%?\n")))
+
+(global-set-key (kbd "C-c c")  'org-capture)
+
+(global-set-key "\C-cl" 'org-store-link)
+
+(setq org-cycle-separator-lines 0)
