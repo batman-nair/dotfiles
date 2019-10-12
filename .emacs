@@ -16,7 +16,7 @@
  '(initial-buffer-choice (quote shell))
  '(package-selected-packages
    (quote
-    (cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
+    (company cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -129,6 +129,12 @@
 ;; cmake-ide setup
 (cmake-ide-setup)
 
+(setq cmake-ide-build-pool-dir "build/")
+(setq cmake-ide-build-pool-use-persistent-naming t)
+
+;; company-mode
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; Compilation Shortcut
 (global-set-key (kbd "C-x C-e")  'compile)
 
@@ -137,12 +143,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq org-agenda-files (quote ("~/org/todo.org")))
 
-(setq org-use-fast-todo-selection t)
 (setq org-todo-keywords
-  '((sequence "TODO(t)" "IN-PROGRESS(p)" "DONE(d)" "STASHED(s)")))
+  '((sequence "TODO(t)" "WORKING(w)" "|" "DONE(d)" "STASHED(s)")))
 (setq org-todo-keyword-faces
-  '(("IN-PROGRESS" . "orange")
-   ("STASHED" . "grey")))
+      '(("WORKING" . "orange")
+	("DONE" . "forest green")
+	("STASHED" . "grey")))
 
 (setq org-default-notes-file "~/org/todo.org")
 (setq org-capture-templates
@@ -162,8 +168,9 @@
 	 (file+headline "~/org/todo.org" "Random Ideas")
 	 "* %i%?\n")))
 
-(global-set-key (kbd "C-c c")  'org-capture)
+(setq org-use-fast-todo-selection t)
+(setq org-enforce-todo-dependencies t)
+(setq org-cycle-separator-lines -1)
 
 (global-set-key "\C-cl" 'org-store-link)
-
-(setq org-cycle-separator-lines 0)
+(global-set-key (kbd "C-c c")  'org-capture)
