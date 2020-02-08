@@ -16,7 +16,7 @@
  '(initial-buffer-choice (quote shell))
  '(package-selected-packages
    (quote
-    (company cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
+    (ace-jump-mode evil-visualstar evil-goggles grip-mode company cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -84,6 +84,8 @@
 (define-key evil-insert-state-map "\C-a" 'move-beginning-of-line)
 (define-key evil-insert-state-map "\C-e" 'end-of-line)
 (define-key evil-motion-state-map "\C-e" 'end-of-line)
+(define-key evil-insert-state-map "\C-p" 'evil-previous-line)
+(define-key evil-insert-state-map "\C-n" 'evil-next-line)
 (define-key evil-normal-state-map "\C-w" 'evil-delete-backward-word)
 (define-key evil-insert-state-map "\C-w" 'evil-delete-backward-word)
 (define-key evil-visual-state-map "\C-w" 'evil-delete-backward-word)
@@ -94,6 +96,15 @@
 ;; Vim Surround
 (require 'evil-surround)
 (global-evil-surround-mode 1)
+
+;; Highlight changes in evil mode
+(evil-goggles-mode)
+;; Search for visual selection with */#
+(global-evil-visualstar-mode)
+
+;; Quick jump to anywhere in the window
+(require 'ace-jump-mode)
+(define-key evil-normal-state-map (kbd "SPC") 'ace-jump-mode)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Ediff Mode
@@ -128,9 +139,6 @@
 
 ;; cmake-ide setup
 (cmake-ide-setup)
-
-(setq cmake-ide-build-pool-dir "build/")
-(setq cmake-ide-build-pool-use-persistent-naming t)
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
