@@ -86,12 +86,15 @@
 (define-key evil-motion-state-map "\C-e" 'end-of-line)
 (define-key evil-insert-state-map "\C-p" 'evil-previous-line)
 (define-key evil-insert-state-map "\C-n" 'evil-next-line)
+(define-key evil-insert-state-map "\C-k" 'kill-line)
 (define-key evil-normal-state-map "\C-w" 'evil-delete-backward-word)
 (define-key evil-insert-state-map "\C-w" 'evil-delete-backward-word)
 (define-key evil-visual-state-map "\C-w" 'evil-delete-backward-word)
 (define-key evil-normal-state-map (kbd "C-.") 'undo-tree-redo)
 (define-key evil-insert-state-map (kbd "C-.") 'undo-tree-redo)
 (define-key evil-visual-state-map (kbd "C-.") 'undo-tree-redo)
+
+(evil-ex-define-cmd "k" 'kill-this-buffer)
 
 ;; Vim Surround
 (require 'evil-surround)
@@ -112,6 +115,8 @@
 (load-library "ediff")
 (setq ediff-window-setup-function 'ediff-setup-windows-plain)
 (setq ediff-split-window-function 'split-window-horizontally)
+;; Only 2 windows during merge
+(setq magit-ediff-dwim-show-on-hunks t)
 
 ;; Return to previous window config on quit
 (winner-mode)

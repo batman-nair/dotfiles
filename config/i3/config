@@ -366,7 +366,7 @@ for_window [class=MPlayer] floating enable
 # 2: Code Envirnoment
 assign [class=Emacs]            		        $WS2
 # 3: Browsers
-assign [class=Firefox|qutebrowser]		        $WS3
+assign [class=Firefox|qutebrowser|Chrome]       $WS3
 # 4: File-managers
 assign [class=Thunar|File-roller|ranger]		$WS4
 # 5: Document Viewers
