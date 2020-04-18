@@ -1,7 +1,4 @@
-cp ~/.Xresources .
 cp ~/.zshrc .
-cp ~/.xinitrc .
-cp ~/.xprofile .
 cp ~/.vimrc vim/
 cp ~/.bashrc .
 cp ~/.emacs emacs/
