@@ -7,47 +7,37 @@ Most of the applications used are only in i3 only.
 
 ## i3-gaps
 10 Workspaces:
-1 and 2 Shell/Coding,
-3 Browsers,
-4 File manager,
-5 Documents,
-6 Games,
-7 Media,
-8 IRC chat,
-9 Extra bin,
-10 Music
+ 1. Shell
+ 2. Coding,
+ 3. Browsers,
+ 4. File manager,
+ 5. Documents,
+ 6. Games,
+ 7. Media,
+ 8. IRC chat,
+ 9. Extra bin,
+ 10. Music
 
 Windows go to their workspaces automatically and I know where to find any window in an instant.
+Wallpaper and overall colorscheme controlled using pywal.
 
-Wallpaper and overall colorscheme using pywal.
+Almost all the applications are vim keybinding compatible.
 
-Almost all the applications were vim keybinding compatible.
-
-Bottom bar - Polybar
-
-Application launcher - rofi
-
-Terminal - termite
-
-Browser - qutebrowser
-
-File manager - ranger
-
-Document viewer - zathura
-
-Games - Steam
-
-Media player - mpv/vlc
-
-IRC client - HexChat
-
-Music player - (not used now) cmus + mpd
-
-Lockscreen - betterlockscreen
+ - Bottom bar - Polybar
+ - Application launcher - rofi
+ - Terminal - termite
+ - Browser - qutebrowser
+ - File manager - ranger
+ - Document viewer - zathura
+ - Games - Steam
+ - Media player - mpv/vlc
+ - IRC client - HexChat
+ - Music player - (not used now) cmus + mpd
+ - Lockscreen - betterlockscreen
 
 Special modes in i3:
-Game Mode - disable all key binding for no interference,
-Music mode - for quick music controls using keyboard only from anywhere.
+ - Game Mode - disable all key binding for no interference,
+ - Music mode - for quick music controls using keyboard only from anywhere.
 
 There are more special stuff, if interested you can go through i3 config. It's pretty well documented.
 
@@ -57,13 +47,13 @@ I use zsh with oh-my-zsh. Default robbyrussell theme looks good enough for me. N
 ## Scripts
 The folder was inspired and started from Luke Smith's dotfiles.
 
-btmenu - Connect with bluetooth devices using rofi as interface.
-compiler - Compile any file based on the type of the file.
-dmenumount - dmenu interface for mounting disks.
-dpass - dmenu interface to type password.
-opout - Run any file based on type of the file.
-shortcuts.sh - Add the configs and folders shortcuts to shell and ranger
-utility - Master interface for bluetooth and wifi menu using rofi.
+ - btmenu - Connect with bluetooth devices using rofi as interface.
+ - compiler - Compile any file based on the type of the file.
+ - dmenumount - dmenu interface for mounting disks.
+ - dpass - dmenu interface to type password.
+ - opout - Run any file based on type of the file.
+ - shortcuts.sh - Add the configs and folders shortcuts to shell and ranger
+ - utility - Master interface for bluetooth and wifi menu using rofi.
 
 ## Ranger
 A console file manager with vim key bindings. I have additional shortcuts for quick access to my main folders. The shortcuts script helps create this automatically.
