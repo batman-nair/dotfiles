@@ -65,6 +65,8 @@ Application launcher for i3. My own theme :D
 
 ## Vim
 Vim Plug for plugins
+
+| --             | --                                                      |
 | YouCompleteMe  | Pretty cool autocomplete                                |
 | emmet-vim      | Emmet snippets for web                                  |
 | goyo.vim       | Beautiful distraction less mode for writing             |
@@ -85,6 +87,8 @@ Some other custom stuff:
 
 ## Emacs
 Plugins used:
+
+| --              | --                                                        |
 | ace-jump-mode   | Quickly move anywhere in screen in couple of key presses  |
 | cmake-mode      | Sets up stuff nicely with cmake                           |
 | company         | Nice autocomplete                                         |
