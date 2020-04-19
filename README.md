@@ -1,9 +1,7 @@
 # Dotfiles
 The behind the scenes config files of what runs on my Linux system.
 
-I use Manjaro linux, a variant of Arch linux. I've been a long time i3 user but now I use KDE as it suits my current workflow more. I explain more about my DE choices later.
-
-Most of the applications used are only in i3 only.
+I use Manjaro linux, a variant of Arch linux. I've been a long time i3 user but now I use KDE as it suits my current workflow much more nicely.
 
 ## i3-gaps
 10 Workspaces:
@@ -18,20 +16,20 @@ Most of the applications used are only in i3 only.
  9. Extra bin,
  10. Music
 
-Windows go to their workspaces automatically so easy to find any window in an instant.
-Wallpaper and overall colorscheme controlled using pywal.
+Windows go to their workspaces automatically so it's easy to find any window in an instant.
+Wallpaper and overall colorscheme controlled using [pywal](https://github.com/dylanaraps/pywal).
 
- - Bottom bar - Polybar
- - Application launcher - rofi
+ - Bottom bar - [Polybar](https://github.com/polybar/polybar)
+ - Application launcher - [rofi](https://github.com/davatorium/rofi)
  - Terminal - termite
- - Browser - qutebrowser
- - File manager - ranger
- - Document viewer - zathura
+ - Browser - [qutebrowser](https://github.com/qutebrowser/qutebrowser) - keyboard based, vim-like browser
+ - File manager - [ranger](https://github.com/ranger/ranger) - vim inspired file manager for console
+ - Document viewer - [zathura](https://wiki.archlinux.org/index.php/Zathura) - minimal pdf viewer with vi styled keybindings
  - Games - Steam
  - Media player - mpv/vlc
  - IRC client - HexChat
- - Music player - (not used now) cmus + mpd
- - Lockscreen - betterlockscreen
+ - Music player - mpd + [cmus](https://wiki.archlinux.org/index.php/Cmus) - console based music player (not used now)
+ - Lockscreen - [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 
 Special modes in i3:
  - Game Mode - disable all key binding for no interference,
@@ -68,18 +66,18 @@ Vim Plug for plugins
 
 | Package        | Description                                             |
 | --             | --                                                      |
-| YouCompleteMe  | Pretty cool autocomplete                                |
-| emmet-vim      | Emmet snippets for web                                  |
-| goyo.vim       | Beautiful distraction less mode for writing             |
-| syntastic      | Syntax and code checker                                 |
-| tcomment_vim   | File type based auto comment                            |
-| wal.vim        | Wal colorscheme according to wallpaper                  |
-| vim-airline    | For cooler status bar                                   |
-| vim-easyescape | Press jk or kj to quick escape                          |
-| vim-easymotion | Quick move to anywhere on screen                        |
-| vim-gitgutter  | git integration for showing changed lines               |
-| vim-repeat     | For supporting surround repeats                         |
-| vim-surround   | Easier surrounding brackets or quotes and stuff editing |
+| [YouCompleteMe](https://github.com/ycm-core/YouCompleteMe)  | Pretty cool autocomplete                                |
+| [emmet-vim](https://github.com/mattn/emmet-vim)      | Emmet snippets for web                                  |
+| [goyo.vim](https://github.com/junegunn/goyo.vim)       | Beautiful distraction less mode for writing             |
+| [syntastic](https://github.com/vim-syntastic/syntastic)      | Syntax and code checker                                 |
+| [tcomment_vim](https://github.com/tomtom/tcomment_vim)   | File type based auto comment                            |
+| [wal.vim](https://github.com/dylanaraps/wal.vim)        | Wal colorscheme according to wallpaper                  |
+| [vim-airline](https://github.com/vim-airline/vim-airline)    | For cooler status bar                                   |
+| [vim-easyescape](https://github.com/zhou13/vim-easyescape) | Press jk or kj to quick escape                          |
+| [vim-easymotion](https://github.com/easymotion/vim-easymotion) | Quick move to anywhere on screen                        |
+| [vim-gitgutter](https://github.com/airblade/vim-gitgutter)  | git integration for showing changed lines               |
+| [vim-repeat](https://github.com/tpope/vim-repeat)     | For supporting surround repeats                         |
+| [vim-surround](https://github.com/tpope/vim-surround)   | Easier surrounding brackets or quotes and stuff editing |
 
 Some other custom stuff:
  - opout and compiler script shortcuts for easy compile and running files from vim itself.
@@ -91,20 +89,20 @@ Plugins used:
 
 | Package         | Description                                               |
 | --              | --                                                        |
-| ace-jump-mode   | Quickly move anywhere in screen in couple of key presses  |
-| cmake-mode      | Sets up stuff nicely with cmake                           |
-| company         | Nice autocomplete                                         |
-| evil            | Vim on emacs                                              |
-| evil-goggles    | A visual cue on area affected by area command. Aesthetics |
-| evil-surround   | Similar to vim-surround in emacs evil                     |
-| evil-visualstar | Pressing * or # searches visual selection                 |
-| flycheck        | Syntax checker                                            |
-| grip-mode       | Github flavour markdown preview                           |
-| magit           | Super powerful git in emacs                               |
-| markdown-mode   | Markdown support for emacs                                |
-| telephone-line  | Powerline for emacs                                       |
-| undo-tree       | Much easier undo implementation                           |
-| whiteroom-mode  | Similar to Goyo for Vim, beauty writing mode              |
+| [ace-jump-mode](https://github.com/winterTTr/ace-jump-mode)   | Quickly move anywhere in screen in couple of key presses  |
+| [cmake-ide](https://github.com/atilaneves/cmake-ide)       | Sets up stuff nicely with cmake                           |
+| [company](https://github.com/company-mode/company-mode)         | Nice autocomplete                                         |
+| [evil](https://github.com/emacs-evil/evil)            | Vim on emacs                                              |
+| [evil-goggles](https://github.com/edkolev/evil-goggles)    | A visual cue on area affected by area command. Aesthetics |
+| [evil-surround](https://github.com/emacs-evil/evil-surround)   | Similar to vim-surround in emacs evil                     |
+| [evil-visualstar](https://github.com/bling/evil-visualstar) | Pressing * or # searches visual selection                 |
+| [flycheck](https://github.com/flycheck/flycheck)        | Syntax checker                                            |
+| [grip-mode](https://github.com/seagle0128/grip-mode)       | Github flavour markdown preview                           |
+| [magit](https://github.com/magit/magit)           | Super powerful git in emacs                               |
+| [markdown-mode](https://github.com/jrblevin/markdown-mode)   | Markdown support for emacs                                |
+| [telephone-line](https://github.com/dbordak/telephone-line)  | Powerline for emacs                                       |
+| [undo-tree](https://www.emacswiki.org/emacs/UndoTree)       | Much easier undo implementation                           |
+| [whiteroom-mode](https://github.com/joostkremers/writeroom-mode)  | Similar to Goyo for Vim, beauty writing mode              |
 
 There are a lot of custom changes, here are a few:
  - Windmove for quick movement between windows
