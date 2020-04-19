@@ -16,7 +16,7 @@
  '(initial-buffer-choice (quote shell))
  '(package-selected-packages
    (quote
-    (ace-jump-mode evil-visualstar evil-goggles grip-mode company cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
+    (visual-fill-column writeroom-mode ace-jump-mode evil-visualstar evil-goggles grip-mode company cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,10 +51,6 @@
 
 ;; turn on highlight matching brackets when cursor is on one
 (show-paren-mode 1)
-
-;; Reducing emacs font size
-(set-frame-font
- "-CYRE-Inconsolata-normal-normal-normal-*-12-*-*-*-m-0-iso10646-1")
 
 ;; Change location of temp files
 (setq auto-save-file-name-transforms

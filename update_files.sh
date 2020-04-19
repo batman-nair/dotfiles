@@ -1,7 +1,7 @@
 cp ~/.zshrc .
-cp ~/.vimrc vim/
+cp ~/.vimrc .
 cp ~/.bashrc .
-cp ~/.emacs emacs/
+cp ~/.emacs .
 
 # Script files
 cp -rf ~/.scripts ./scripts
