@@ -1,7 +1,7 @@
 # Dotfiles
 The behind the scenes config files of what runs on my Linux system.
 
-Manjaro linux. Long time i3 user but now use KDE as it suits my workflow much more nicely.
+Manjaro linux. Long time i3 user but now use KDE as it suits my workflow much more nicely. Update my dotfiles using update_files.sh script. These dotfiles are not meant to be blindly copied in. User discretion advised.
 
 ## i3-gaps
 ![i3_gaps_clean](screenshots/i3_gaps_clean.png)
