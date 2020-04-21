@@ -1,7 +1,7 @@
 # Dotfiles
 The behind the scenes config files of what runs on my Linux system.
 
-I use Manjaro linux, a variant of Arch linux. I've been a long time i3 user but now I use KDE as it suits my current workflow much more nicely.
+Manjaro linux. Long time i3 user but now use KDE as it suits my workflow much more nicely.
 
 ## i3-gaps
 ![i3_gaps_clean](screenshots/i3_gaps_clean.png)
@@ -90,7 +90,7 @@ Some other custom stuff:
  - Lots of custom snippets using the markers for easy code.
 
 ## Emacs
-Plugins used:
+I use default emacs with evil keybindings. Plugins used:
 
 | Package         | Description                                               |
 | --              | --                                                        |
@@ -114,6 +114,14 @@ There are a lot of custom changes, here are a few:
  - Keymappings for hybrid evil mode working.(Default emacs keybindings work when in insert mode)
  - winner-mode for saved window configs
  - org-mode for tasks(don't use them now though)
+
+
+## KDE
+![kde](screenshots/kde.png)
+I currently use KDE as it suits my workflow much better and easier to use.
+
+I emulate the workspaces concept from i3 using activities in KDE. The main/default activity has the browser or other supporting application. Second activity will have emacs. Third will have music/media if any. I use Win + number key to quickly switch between activities. That's about it for workflow. Terminal and code editing is all within emacs itself.
+
 
 
 ## More Screenshots
