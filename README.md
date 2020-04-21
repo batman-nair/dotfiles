@@ -29,7 +29,7 @@ Wallpaper and overall colorscheme controlled using [pywal](https://github.com/dy
  - Games - Steam
  - Media player - mpv/vlc
  - IRC client - HexChat
- - Music player - mpd + [cmus](https://wiki.archlinux.org/index.php/Cmus) - console based music player (not used now)
+ - Music player - mpd + [ncmpcpp](https://wiki.archlinux.org/index.php/Ncmpcpp) - console based music player (not used now)
  - Lockscreen - [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen)
 
 Special modes in i3:
@@ -39,6 +39,7 @@ Special modes in i3:
 There are more special stuff, if interested you can go through [i3 config](config/i3/config). It's pretty well documented.
 
 ## Shell
+![shell](screenshots/shell.png)
 I use zsh with oh-my-zsh. Default robbyrussell theme looks good and minimal for my liking. Nothing special here.
 
 ## Scripts
@@ -117,12 +118,8 @@ There are a lot of custom changes, here are a few:
 
 ## More Screenshots
 
-![clean1](screenshots/clean1.png)
+![i3_gaps_dirty](screenshots/i3_gaps_dirty.png)
 
-![clean2](screenshots/clean2.png)
+![i3_gaps_aesthetics](screenshots/i3_gaps_aesthetics.png)
 
-![clean3](screenshots/clean3.png)
-
-![dirty](screenshots/dirty.png)
-
-![music](screenshots/music.png)
+![ranger1](screenshots/ranger1.png)
