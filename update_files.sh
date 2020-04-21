@@ -16,7 +16,7 @@ cp -rf ~/.config/dunst ./config/
 cp -rf ~/.config/neofetch/config.conf ./config/neofetch.conf
 
 # Ranger files
-cp -rf ~/.config/ranger/rc.conf ./config/
+cp -rf ~/.config/ranger/rc.conf ./config/ranger/
 cp -rf ~/.config/ranger/shortcuts.conf ./config/
 
 # Other config
