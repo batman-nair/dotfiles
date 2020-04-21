@@ -16,13 +16,13 @@
  '(initial-buffer-choice (quote shell))
  '(package-selected-packages
    (quote
-    (visual-fill-column writeroom-mode ace-jump-mode evil-visualstar evil-goggles grip-mode company cmake-mode markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
+    (visual-fill-column writeroom-mode ace-jump-mode evil-visualstar evil-goggles grip-mode company markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "Source Code Pro" :foundry "ADBO" :slant normal :weight normal :height 98 :width normal)))))
 
 ;; Manually installed packages go here
 (add-to-list 'load-path "~/.emacs.d/lisp/")
@@ -50,7 +50,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; turn on highlight matching brackets when cursor is on one
-(show-paren-mode 1)
+(show-paren-mode t)
 
 ;; Change location of temp files
 (setq auto-save-file-name-transforms

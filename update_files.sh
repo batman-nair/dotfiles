@@ -4,7 +4,7 @@ cp ~/.bashrc .
 cp ~/.emacs .
 
 # Script files
-cp -rf ~/.scripts ./scripts
+cp -R ~/.scripts/. ./scripts
 
 # Config files
 cp ~/.config/compton.conf ./config/compton.conf
