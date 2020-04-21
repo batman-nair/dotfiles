@@ -4,6 +4,7 @@ The behind the scenes config files of what runs on my Linux system.
 I use Manjaro linux, a variant of Arch linux. I've been a long time i3 user but now I use KDE as it suits my current workflow much more nicely.
 
 ## i3-gaps
+![i3_gaps_clean](screenshots/i3_gaps_clean.png)
 10 Workspaces:
  1. Shell
  2. Coding,
@@ -52,13 +53,16 @@ The folder was inspired and started from Luke Smith's dotfiles.
  - utility - Master interface for bluetooth and wifi menu using rofi.
 
 ## Ranger
+![ranger](screenshots/ranger1.png)
 A console file manager with vim key bindings. I have additional shortcuts for quick access to my main folders. The shortcuts script helps create this automatically.
 
 Example, to **g**o to my **w**orks folder just press **gw** and similar.
 
 ## Polybar
+![polybar](screenshots/polybar.png)
 
 ## Rofi
+![rofi](screenshots/rofi.png)
 Application launcher for i3. My own theme :D
 
 ## Vim
@@ -111,7 +115,7 @@ There are a lot of custom changes, here are a few:
  - org-mode for tasks(don't use them now though)
 
 
-## Screenshots
+## More Screenshots
 
 ![clean1](screenshots/clean1.png)
 
