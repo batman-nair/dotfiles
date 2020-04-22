@@ -1,7 +1,7 @@
 # Dotfiles
-The behind the scenes config files of what runs on my Linux system.
-
-Manjaro linux. Long time i3 user but now use KDE as it suits my workflow much more nicely. Update my dotfiles using update_files.sh script. These dotfiles are not meant to be blindly copied in. User discretion advised.
+ - Manjaro linux. Long time i3 user but now use KDE as it suits my workflow much more nicely.
+ - Update my dotfiles using update_files.sh script.
+ - These dotfiles are not meant to be blindly copied in. User discretion advised.
 
 ## i3-gaps
 ![i3_gaps_clean](screenshots/i3_gaps_clean.png)
@@ -132,7 +132,10 @@ I currently use KDE as it suits my workflow much better and easier to use.
 
 I emulate the workspaces concept from i3 using activities in KDE. The main/default activity has the browser or other supporting application. Second activity will have emacs. Third will have music/media if any. I use Win + number key to quickly switch between activities. That's about it for workflow. Terminal and code editing is all within emacs itself.
 
-
+ - Aritim Dark theme
+ - La Capitaine icons
+ - No virtual desktops, only Activities
+ - Latte Dock
 
 ## More Screenshots
 
@@ -140,4 +143,4 @@ I emulate the workspaces concept from i3 using activities in KDE. The main/defau
 
 ![i3_gaps_aesthetics](screenshots/i3_gaps_aesthetics.png)
 
-![ranger1](screenshots/ranger1.png)
+![ranger](screenshots/ranger.png)
