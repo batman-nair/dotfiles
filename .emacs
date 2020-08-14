@@ -16,7 +16,7 @@
  '(initial-buffer-choice (quote shell))
  '(package-selected-packages
    (quote
-    (visual-fill-column writeroom-mode ace-jump-mode evil-visualstar evil-goggles grip-mode company markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
+    (org-journal visual-fill-column writeroom-mode ace-jump-mode evil-visualstar evil-goggles grip-mode company markdown-mode flycheck evil-surround magit telephone-line undo-tree evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -91,6 +91,12 @@
 (define-key evil-visual-state-map (kbd "C-.") 'undo-tree-redo)
 
 (evil-ex-define-cmd "k" 'kill-this-buffer)
+(defun liu233w/ex-save-kill-buffer-and-close ()
+    (interactive)
+    (save-buffer)
+    (kill-this-buffer)
+    )
+(evil-ex-define-cmd "wq" 'liu233w/ex-save-kill-buffer-and-close)
 
 ;; Vim Surround
 (require 'evil-surround)
@@ -183,3 +189,8 @@
 
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key (kbd "C-c c")  'org-capture)
+
+;; Org journal
+(setq org-journal-dir "~/org/journal/")
+(global-set-key (kbd "C-c C-j") 'org-journal-new-entry)
+(require 'org-journal)
